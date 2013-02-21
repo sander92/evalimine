@@ -1,0 +1,3 @@
+# Module veeb
+# RPC service class, partial path of RPC policy file
+veeb.client.GreetingService, 715065899326D678DF0E75D9EA896487.gwt.rpc
