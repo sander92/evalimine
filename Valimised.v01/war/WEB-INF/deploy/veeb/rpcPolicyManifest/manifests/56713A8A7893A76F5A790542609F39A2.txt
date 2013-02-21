@@ -1,2 +1,0 @@
-serviceClass: veeb.client.GreetingService
-path: 715065899326D678DF0E75D9EA896487.gwt.rpc
