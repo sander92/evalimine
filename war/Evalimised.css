@@ -17,7 +17,15 @@ li
 	background-color:#89A3A3;
 }
 
-
+img.printer{
+	position: fixed;
+	top: 25px;
+	right: 15px;
+	padding: 5px;
+}
+a:hover.printer{
+	cursor: pointer;
+}
 a:link,a:visited
 {
 	display:block;
@@ -36,7 +44,8 @@ a:hover,a:active
 	background-color:#424E4E;
 }
 
-
+	
+}
 #Logo
 {
 	z-index:-1;
