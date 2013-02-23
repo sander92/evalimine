@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+
+#header{
+	color:black;
+	font-size: 14px;
+}
+body { 
+  color : #000000; 
+  background : #ffffff; 
+  font-family : "Times New Roman", Times, serif;
+  font-size : 12px; 
+}
+a { 
+    display : none; 
+}
+
+#navigation, #advertising, #other, #footer, #Logo{ 
+  display : none; 
+}
+
