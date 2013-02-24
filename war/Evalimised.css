@@ -1,6 +1,19 @@
+
+
 body
 {
-	background-color:"white";
+	background-image:url('header.png');
+	background-repeat: repeat-x;
+		
+}
+
+!important {
+	min-width: 1px;
+	max-width: 2px
+}
+p{
+	position:absolute;
+	top: 140px;
 }
 
 ul
@@ -14,9 +27,14 @@ ul
 li
 {
 	float:left;
-	background-color:#89A3A3;
+	/*background-color:lightgray;*/
 }
-
+img.ikoon{
+	padding-top:25px;
+	padding-left:10px;
+	height:50px;
+	z-index: -1;
+}
 img.printer{
 	position: fixed;
 	top: 25px;
@@ -26,26 +44,32 @@ img.printer{
 a:hover.printer{
 	cursor: pointer;
 }
+
 a:link,a:visited
 {
 	display:block;
 	width:120px;
-	font-weight:bold;
-	color:#FFFFFF;
-	background-color:#89A3A3;
+	font-weight:400;
+	color:#161616;
+	/*background-color:#89A3A3;*/
 	text-align:center;
-	padding:4px;
+	padding:10px;
+	margin-right:15px;
+	margin-left:15px;
 	text-decoration:none;
 	text-transform:uppercase;
+	font-family: serif;
+	font-size: 18px;
 }
 
 a:hover,a:active
 {
-	background-color:#424E4E;
+	padding:10px;
+    border-radius:5px;
+	background-color:orange;
+	box-shadow: 5px 5px 10px #888888;
 }
 
-	
-}
 #Logo
 {
 	z-index:-1;
@@ -66,6 +90,7 @@ a:hover,a:active
 
 #header 
 {
+	
    color:white;	
    background:#89A3A3;
    padding-left:10px;
@@ -73,8 +98,11 @@ a:hover,a:active
 
 #navigation
 {
+	position: fixed;
+	top:100px;
+	left:40px;
 	color:white;
-	background:#89A3A3;
+	/*background:#89A3A3;*/
 }
 
 #body 
