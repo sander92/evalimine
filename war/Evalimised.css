@@ -60,15 +60,34 @@ a:link,a:visited
 	text-transform:uppercase;
 	font-family: serif;
 	font-size: 18px;
+	float:left;
 }
 
-a:hover,a:active
+a:hover
+{
+	background-color: #4C4C4C;
+	border-radius:5px;
+}
+a:active, a:focus
 {
 	padding:10px;
     border-radius:5px;
 	background-color:orange;
 	box-shadow: 5px 5px 10px #888888;
 }
+
+body.Pealeht a.Pealeht,
+body.Kandidaadid a.Kandidaadid,
+body.Statistika a.Statistika,
+body.Vote a.Vote,
+body.Logi a.Logi
+{
+	padding:10px;
+    border-radius:5px;
+	background-color:orange;
+	box-shadow: 5px 5px 10px #888888;	
+}
+
 
 #Logo
 {
@@ -102,6 +121,7 @@ a:hover,a:active
 	top:100px;
 	left:40px;
 	color:white;
+	float:left;
 	/*background:#89A3A3;*/
 }
 
