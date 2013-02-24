@@ -30,10 +30,11 @@ li
 	/*background-color:lightgray;*/
 }
 img.ikoon{
+	position:relative;
+	margin-top:0;
 	padding-top:25px;
 	padding-left:10px;
 	height:50px;
-	z-index: -1;
 }
 img.printer{
 	position: fixed;
@@ -41,11 +42,12 @@ img.printer{
 	right: 15px;
 	padding: 5px;
 }
-a:hover.printer{
+.printer a:hover{
 	cursor: pointer;
 }
 
-a:link,a:visited
+
+.navigation a:link,.navigation a:visited
 {
 	display:block;
 	width:120px;
@@ -63,15 +65,17 @@ a:link,a:visited
 	float:left;
 }
 
-a:hover
+.navigation a:hover
 {
 	background-color: #4C4C4C;
-	border-radius:5px;
+	border-top-left-radius:5px;
+    border-top-right-radius:5px;
 }
-a:active, a:focus
+.navigation a:active
 {
 	padding:10px;
-    border-radius:5px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
 	background-color:orange;
 	box-shadow: 5px 5px 10px #888888;
 }
@@ -83,9 +87,10 @@ body.Vote a.Vote,
 body.Logi a.Logi
 {
 	padding:10px;
-    border-radius:5px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
 	background-color:orange;
-	box-shadow: 5px 5px 10px #888888;	
+	box-shadow: 5px 5px 10px #888888;
 }
 
 
@@ -103,22 +108,21 @@ body.Logi a.Logi
 
 #container 
 {
-   min-height:100%;
-   position:relative;
+	position:absolute;
+	width:900px;
 }
 
 #header 
 {
-	
    color:white;	
    background:#89A3A3;
    padding-left:10px;
 }
 
-#navigation
+.navigation
 {
-	position: fixed;
-	top:100px;
+	position:relative;
+	top:13px;
 	left:40px;
 	color:white;
 	float:left;
