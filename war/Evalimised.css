@@ -40,7 +40,7 @@ body
 	width: 500px;
 }
 
-.vorm{
+.vorm,#menuContainer{
 	position:absolute;
 	font-style:oblique;
 	font-variant:small-caps;
@@ -89,7 +89,7 @@ select#erakond, select#piirkond{
 	top: -27px;
 	left: -55px;
 }
-ul
+ul.navigation
 {
 	list-style-type:none;
 	margin:0;
@@ -97,7 +97,7 @@ ul
 	overflow:hidden;
 }
 
-li
+.navigation li
 {
 	float:left;
 	/*background-color:lightgray;*/
@@ -217,3 +217,4 @@ body.Logi a.Logi
    margin:auto;
    height:60px;   /* Height of the footer */
 }
+	
