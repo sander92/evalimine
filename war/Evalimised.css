@@ -96,7 +96,6 @@ ul.navigation
 	padding:0;
 	overflow:hidden;
 }
-
 .navigation li
 {
 	float:left;
@@ -150,6 +149,7 @@ img.flag{
 	background-color: #4C4C4C;
 	border-top-left-radius:5px;
     border-top-right-radius:5px;
+    color: white;
 }
 .navigation a:active
 {
