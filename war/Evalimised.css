@@ -96,7 +96,6 @@ ul.navigation
 	padding:0;
 	overflow:hidden;
 }
-
 .navigation li
 {
 	float:left;
@@ -150,6 +149,7 @@ img.flag{
 	background-color: #4C4C4C;
 	border-top-left-radius:5px;
     border-top-right-radius:5px;
+    color: white;
 }
 .navigation a:active
 {
@@ -184,8 +184,11 @@ body.Logi a.Logi
 	bottom:0px;
 	margin-bottom: 50px;
 }
-
-
+#lisaend{
+	position: absolute;
+	top: 250px;
+	padding: 27px;
+}
 #container 
 {
 	position:absolute;
