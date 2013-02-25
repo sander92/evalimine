@@ -115,6 +115,12 @@ img.printer{
 	right: 15px;
 	padding: 5px;
 }
+img.flag{
+	position: absolute;
+	top: 180px;
+	left: 25px;
+	width: 500px;
+}
 
 .printer a:link, a:hover{
 	cursor: pointer;
