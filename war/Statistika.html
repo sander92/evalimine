@@ -27,8 +27,42 @@
 </div>
 </div>
 <a onclick="window.print()" class="printer"><img alt="Print" src="printer.svg" class="printer"></a>
-<p>Tere, siin on hetkeseis.</p>
+<!-- p>Tere, siin on hetkeseis.</p> -->
+<h2 class="pea">Vaata kes on kõige rohkem hääli saanud ja andnud</h2>
 
+<form class="pea" id="raadio">
+<input type="radio" name="liik" value="partei">Parteid &emsp;&emsp;
+<input type="radio" name="liik" value="piirk">Piirkonnad &emsp;&emsp;
+<input type="radio" name="liik" value="kandidaat">Kandidaadid
+</form>
 
+<table border="1" class="pea" id="tabel">
+	<tr>
+		<th>Piirkond</th>
+		<th>Hääli</th>
+		<th>Erakond</th>
+		<th>Populaarseim kandidaat</th>
+	</tr>
+	<tr>
+		<td>Harjumaa</td>
+		<td>10052</td>
+		<td>Keskerakond</td>
+		<td>Edgar Savisaar</td>
+	</tr>
+	<tr>
+		<td>Tartumaa</td>
+		<td>5123</td>
+		<td>Reformierakond</td>
+		<td>Peeter</td>
+	</tr>
+	<tr>
+		<td>Saaremaa</td>
+		<td>1512</td>
+		<td>Rohelised</td>
+		<td>Peeter</td>
+	</tr>	
+</table>
+
+<img alt="Kaart" src="kaart.png" id="kaart">
 </body>
 </html>

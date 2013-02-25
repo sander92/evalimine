@@ -7,15 +7,88 @@ body
 		
 }
 
-!important {
-	min-width: 1px;
-	max-width: 2px
+.pea{
+	position: absolute;
+	top: 150px;	
+	min-width:700px;
+	text-align: center;
+	margin-right: 15px;
+	padding: 5px;
 }
+
+.pea#tabel{
+	margin-top: 100px;
+	margin-left: 20px;
+}
+
+.pea#tabel th{
+	background-color:#6699FF;
+	color:#ffffff;
+}
+
+.pea#tabel td{
+	padding:2px;
+}
+
+.pea#raadio{
+	margin-top: 60px;
+}
+#kaart{
+	position: relative;
+	top: 170px;
+	left: 800px;
+	width: 500px;
+}
+
+.vorm{
+	position:absolute;
+	font-style:oblique;
+	font-variant:small-caps;
+	font-weight:bold;
+	top: 180px;
+	margin-left: 25px;
+	width: 500px;
+}
+#nimi{
+	margin-right: 25px;
+}
+
+#otsi{
+	position:absolute;
+	top:185px;
+	left:105px;
+	width:50%;
+	padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	
+}
+#otsi:ACTIVE{
+	cursor: wait;
+}
+
+select{
+	position:absolute;
+	top:auto;
+	margin-left: 125px;
+}
+
 p{
 	position:absolute;
 	top: 140px;
 }
 
+p#piirkond, p#erakond{
+	position: relative;
+	top: 10px;
+	padding: -5px;
+}
+
+select#erakond, select#piirkond{
+	position: relative;
+	top: -27px;
+	left: -55px;
+}
 ul
 {
 	list-style-type:none;
@@ -42,7 +115,8 @@ img.printer{
 	right: 15px;
 	padding: 5px;
 }
-.printer a:hover{
+
+.printer a:link, a:hover{
 	cursor: pointer;
 }
 

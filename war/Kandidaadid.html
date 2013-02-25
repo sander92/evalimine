@@ -20,8 +20,28 @@
 
 </div>
 </div>
+<!--  p>Siin saate otsida kandidaatide kohta infot</p>-->
 
-<p>Siin saate otsida kandidaatide kohta infot</p>
+<form class="vorm">
+	Eesnimi: <input type="text" name="firstname" id="nimi">
+	Perenimi: <input type="text" name="lastname" id="nimi">
+	<p id="piirkond">Piirkond: </p>
+		<select name="piirkond" id="piirkond">
+		<option value="P1">Harjumaa</option>
+		<option value="P2">Tartumaa</option>
+		<option value="P3">Saaremaa</option>
+		</select>
+	
+	<p id="erakond">Erakond: </p>
+		<select name="erakond" id="erakond">
+		<option value="E1">Keskerakond</option>
+		<option value="E2">Reformierakond</option>
+		<option value="E3">Rohelised</option>
+		</select>
+		
+	<button id="otsi">Otsi kandidaati</button>
+	
+</form>
 
 </body>
 </html>
