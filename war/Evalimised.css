@@ -1,229 +1,217 @@
-
-
-body
-{
-	background-image:url('header.png');
+body {
+	background-image: url('header.png');
 	background-repeat: repeat-x;
-		
 }
 
-.pea{
+.pea {
 	position: absolute;
-	top: 150px;	
-	min-width:700px;
+	top: 150px;
+	min-width: 700px;
 	text-align: center;
 	margin-right: 15px;
 	padding: 5px;
 }
 
-.pea#tabel{
+.pea#tabel {
 	margin-top: 100px;
 	margin-left: 20px;
 }
 
-.pea#tabel th{
-	background-color:#6699FF;
-	color:#ffffff;
+.pea#tabel th {
+	background-color: #6699FF;
+	color: #ffffff;
 }
 
-.pea#tabel td{
-	padding:2px;
+.pea#tabel td {
+	padding: 2px;
 }
 
-.pea#raadio{
+.pea#raadio {
 	margin-top: 60px;
 }
-#kaart{
+
+#kaart {
 	position: relative;
 	top: 170px;
 	left: 800px;
 	width: 500px;
 }
 
-.vorm,#menuContainer{
-	position:absolute;
-	font-style:oblique;
-	font-variant:small-caps;
-	font-weight:bold;
+.vorm,#menuContainer {
+	position: absolute;
+	font-style: oblique;
+	font-variant: small-caps;
+	font-weight: bold;
 	top: 180px;
 	margin-left: 25px;
 	width: 500px;
 }
-#nimi{
+
+#nimi {
 	margin-right: 25px;
 }
 
-#otsi{
-	position:absolute;
-	top:185px;
-	left:105px;
-	width:50%;
+#otsi {
+	position: absolute;
+	top: 185px;
+	left: 105px;
+	width: 50%;
 	padding: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
-	
 }
-#otsi:ACTIVE{
+
+#otsi:ACTIVE {
 	cursor: wait;
 }
 
-select{
-	position:absolute;
-	top:auto;
+select {
+	position: absolute;
+	top: auto;
 	margin-left: 125px;
 }
 
-p{
-	position:absolute;
+p {
+	position: absolute;
 	top: 140px;
 }
 
-p#piirkond, p#erakond{
+p#piirkond,p#erakond {
 	position: relative;
 	top: 10px;
 	padding: -5px;
 }
 
-select#erakond, select#piirkond{
+select#erakond,select#piirkond {
 	position: relative;
 	top: -27px;
 	left: -55px;
 }
-ul.navigation
-{
-	list-style-type:none;
-	margin:0;
-	padding:0;
-	overflow:hidden;
+
+ul.navigation {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
-.navigation li
-{
-	float:left;
+
+.navigation li {
+	float: left;
 	/*background-color:lightgray;*/
 }
-img.ikoon{
-	position:relative;
-	margin-top:0;
-	padding-top:25px;
-	padding-left:10px;
-	height:50px;
+
+img.ikoon {
+	position: relative;
+	margin-top: 0;
+	padding-top: 25px;
+	padding-left: 10px;
+	height: 50px;
 }
-img.printer{
+
+img.printer {
 	position: fixed;
 	top: 25px;
 	right: 15px;
 	padding: 5px;
 }
-img.flag{
+
+img.flag {
 	position: absolute;
 	top: 180px;
 	left: 25px;
 	width: 500px;
 }
 
-.printer a:link, a:hover{
+.printer a:link,a:hover {
 	cursor: pointer;
 }
 
-
-.navigation a:link,.navigation a:visited
-{
-	display:block;
-	width:120px;
-	font-weight:400;
-	color:#161616;
+.navigation a:link,.navigation a:visited {
+	display: block;
+	width: 120px;
+	font-weight: 400;
+	color: #161616;
 	/*background-color:#89A3A3;*/
-	text-align:center;
-	padding:10px;
-	margin-right:15px;
-	margin-left:15px;
-	text-decoration:none;
-	text-transform:uppercase;
+	text-align: center;
+	padding: 10px;
+	margin-right: 15px;
+	margin-left: 15px;
+	text-decoration: none;
+	text-transform: uppercase;
 	font-family: serif;
 	font-size: 18px;
-	float:left;
+	float: left;
 }
 
-.navigation a:hover
-{
+.navigation a:hover {
 	background-color: #4C4C4C;
-	border-top-left-radius:5px;
-    border-top-right-radius:5px;
-    color: white;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: white;
 }
-.navigation a:active
-{
-	padding:10px;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
-	background-color:orange;
+
+.navigation a:active {
+	padding: 10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: orange;
 	box-shadow: 5px 5px 10px #888888;
 }
 
-body.Pealeht a.Pealeht,
-body.Kandidaadid a.Kandidaadid,
-body.Statistika a.Statistika,
-body.Vote a.Vote,
-body.Logi a.Logi
-{
-	padding:10px;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
-	background-color:orange;
+body.Pealeht a.Pealeht,body.Kandidaadid a.Kandidaadid,body.Statistika a.Statistika,body.Vote a.Vote,body.Logi a.Logi
+	{
+	padding: 10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: orange;
 	box-shadow: 5px 5px 10px #888888;
 }
 
-
-#Logo
-{
-	z-index:-1;
-	opacity:0.4;
+#Logo {
+	z-index: -1;
+	opacity: 0.4;
 	/*filter:alpha(opacity=40); /* For IE8 and earlier */
-	image-position:center;
-	position:fixed;
-	bottom:0px;
+	image-position: center;
+	position: fixed;
+	bottom: 0px;
 	margin-bottom: 50px;
 }
-#lisaend{
+
+#lisaend {
 	position: absolute;
 	top: 250px;
 	padding: 27px;
 }
-#container 
-{
-	position:absolute;
-	width:900px;
+
+#container {
+	position: absolute;
+	width: 900px;
 }
 
-#header 
-{
-   color:white;	
-   background:#89A3A3;
-   padding-left:10px;
+#header {
+	color: white;
+	background: #89A3A3;
+	padding-left: 10px;
 }
 
-.navigation
-{
-	position:relative;
-	top:13px;
-	left:40px;
-	color:white;
-	float:left;
+.navigation {
+	position: relative;
+	top: 13px;
+	left: 40px;
+	color: white;
+	float: left;
 	/*background:#89A3A3;*/
 }
 
-#body 
-{
-   padding:0px;
-   padding-bottom:60px;   /* Height of the footer */
+#body {
+	padding: 0px;
+	padding-bottom: 60px; /* Height of the footer */
 }
 
-#footer 
-{
-   position:absolute;
-   bottom:0;
-   width:100%;
-   margin:auto;
-   height:60px;   /* Height of the footer */
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin: auto;
+	height: 60px; /* Height of the footer */
 }
-	
