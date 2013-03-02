@@ -1,3 +1,18 @@
+/*$(document).ready(function(){
+	//$("button").click(function(){
+		var validator = $("#lisaKandidaadiks").validate({
+		    rules: {
+		        firstName: "required",
+		        lastName: "required",
+		    messages: {
+		        firstName: "Enter your firstname",
+		        lastName: "Enter your lastname",
+		}
+	//}
+}); */
+$(document).ready(function(){
+    $("#lisaKandidaadiks").validate();
+  });
 function createPopup(mylink, windowName) {
 	//alert("Hello World")
 	if (!window.focus)return true;

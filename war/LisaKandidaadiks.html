@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="script.js"></script>
 	<title>Lisa end kandidaadiks</title>
 </head>
 <body class= "Popup">
 <!--  p>Siin saate end kandidaadiks lisada</p>-->
 
-<form class="vorm" name="lisaKandidaadiks">
-	<p>Eesnimi: <input type="text" name="firstName"> <label id="fNameValidate"></label></p>
+<form class="vorm" id="lisaKandidaadiks" name="lisaKandidaadiks">
+	<p>Eesnimi: <input type="text" id="cemail" name="firstName"> <label id="fNameValidate"></label></p>
 	<p>Perenimi: <input type="text" name="lastName"> <label id="lNameValidate"></label></p>
 	<p>Piirkond:
 		<select name="area">
@@ -29,6 +30,7 @@
 		<label id="partyValidate"></label></p>
 	</p>
 	<button type="submit" onClick="return validateForm();">Lisa end kandidaadiks</button>	
+	<input class="submit" type="submit" value="Submit"/>
 </form>
 </body>
 </html>

@@ -13,19 +13,42 @@ body {
 }
 
 .pea#tabel {
+	background-color: #D8D8D8;
 	margin-top: 100px;
 	margin-left: 20px;
+	font-size: 11pt;
+	text-align: left;
 }
 
-.pea#tabel th {
-	background-color: #6699FF;
-	color: #ffffff;
+.pea#tabel thead tr th {
+	background-color: orange;
+	border: 1px solid black;
+	color: black;
+	padding: 3px;
+}
+.pea#tabel thead tr .header{
+	background-image: url(images/sort_default.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;	
 }
 
-.pea#tabel td {
-	padding: 2px;
+.pea#tabel tbody td {
+	color: black;
+	padding: 3px;
+	background-color: #FFF;
+	vertical-align: top;
+}
+.pea#tabel thead tr .headerSortDown {
+	background-image: url(images/sort_asc.gif);
 }
 
+.pea#tabel thead tr .headerSortUp {
+	background-image: url(images/sort_desc.gif);
+}
+.pea#tabel thead tr .headerSortDown, .pea#tabel thead tr .headerSortUp {
+	background-color: orange;
+}
 .pea#raadio {
 	margin-top: 60px;
 }
