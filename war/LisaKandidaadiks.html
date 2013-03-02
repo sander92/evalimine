@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="script.js"></script>
+	<title>Lisa end kandidaadiks</title>
+</head>
+<body class= "Popup">
+<!--  p>Siin saate end kandidaadiks lisada</p>-->
+
+<form class="vorm" name="lisaKandidaadiks">
+	<p>Eesnimi: <input type="text" name="firstName"> <label id="fNameValidate"></label></p>
+	<p>Perenimi: <input type="text" name="lastName"> <label id="lNameValidate"></label></p>
+	<p>Piirkond:
+		<select name="area">
+		<option value=""></option>
+		<option value="P1">Harjumaa</option>
+		<option value="P2">Tartumaa</option>
+		<option value="P3">Saaremaa</option>
+		</select>
+		<label id="areaValidate"></label></p>
+	</p>
+	<p>Erakond: 
+		<select name="party">
+		<option value=""></option>
+		<option value="E1">Keskerakond</option>
+		<option value="E2">Reformierakond</option>
+		<option value="E3">Rohelised</option>
+		</select>
+		<label id="partyValidate"></label></p>
+	</p>
+	<button type="submit" onClick="return validateForm();">Lisa end kandidaadiks</button>	
+</form>
+</body>
+</html>
