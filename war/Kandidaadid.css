@@ -1,0 +1,13 @@
+.vorm
+{
+	display:block;
+}
+
+#left div
+{
+	display:inline-block;
+}
+
+#otsi:ACTIVE {
+	cursor: wait;
+}

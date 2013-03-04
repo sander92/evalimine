@@ -1,47 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="Evalimised.css">
+	<link rel="stylesheet" type="text/css" href="Stiil.css">
+	<link rel="stylesheet" type="text/css" href="Kandidaadid.css">
 <title>E-Valimised: kandidaadid</title>
 </head>
 
 <body class="Kandidaadid">
 
-<div id="container">
-<a id = "pilt" href=Evalimised.html><img alt="E-Valimised" src="hIcon.png" class="ikoon"></a>
-<div>
-<ul class="navigation">
-	<li><a class="Pealeht" href=Evalimised.html>Pealeht</a></li>
-	<li><a class="Vote" href=Vote.html>H‰‰letama</a></li>
-	<li><a class="Kandidaadid" href=Kandidaadid.html>Kandidaadid</a></li>
-	<li><a class="Statistika" href=Statistika.html>Statistika</a></li>
-	<li><a class="Logi" href=Evalimised.html>Sisene</a></li>
-</ul>
-
-</div>
-</div>
-<!--  p>Siin saate otsida kandidaatide kohta infot</p>-->
-
-<form class="vorm">
-	Eesnimi: <input type="text" name="firstname" id="nimi">
-	Perenimi: <input type="text" name="lastname" id="nimi">
-	<p id="piirkond">Piirkond: </p>
-		<select name="piirkond" id="piirkond">
-		<option value="P1">Harjumaa</option>
-		<option value="P2">Tartumaa</option>
-		<option value="P3">Saaremaa</option>
-		</select>
-	
-	<p id="erakond">Erakond: </p>
-		<select name="erakond" id="erakond">
-		<option value="E1">Keskerakond</option>
-		<option value="E2">Reformierakond</option>
-		<option value="E3">Rohelised</option>
-		</select>
+	<div id="container">
+		<div id="tiitel">
+			<h1><a href=Evalimised.html>E-VALIMISED</a></h1>
+		</div>
+		<div id="navibar">
+			<ul id="navigation">
+				<li><a class="Pealeht" href=Evalimised.html>Pealeht</a></li>
+				<li><a class="Vote" href=Vote.html>H‰‰letama</a></li>
+				<li><a class="Kandidaadid" href=Kandidaadid.html>Kandidaadid</a></li>
+				<li><a class="Statistika" href=Statistika.html>Statistika</a></li>
+				<li><a class="Logi" href=Evalimised.html>Sisene</a></li>
+			</ul>
+		</div>
 		
-	<button id="otsi">Otsi kandidaati</button>
-	
-</form>
+		<div id="sisutop">
+		</div>
+		<div id="sisu">
+			<div id="left">
+				Eesnimi: <input type="text" name="firstname" id="nimi"><br>
+				Perenimi: <input type="text" name="lastname" id="nimi">
+				
+				<form class="vorm">
+					<div>
+						<p id="piirkond">Piirkond: </p>
+							<select name="piirkond" id="piirkond">
+							<option value="P1">Harjumaa</option>
+							<option value="P2">Tartumaa</option>
+							<option value="P3">Saaremaa</option>
+							</select>
+					</div>
+					<div>
+						<p id="erakond">Erakond: </p>
+							<select name="erakond" id="erakond">
+							<option value="E1">Keskerakond</option>
+							<option value="E2">Reformierakond</option>
+							<option value="E3">Rohelised</option>
+							</select>
+					</div><br>
+					<button id="otsi">Otsi kandidaati</button>
+			</form>
+				
+			</div>
+			<div id="righttop">
+			</div>
+				
+			<div id="right">
+				<p>Siin saate kandidaati otsida. Aga alles kunagi tulevikus.</p>
+			</div>
+			<div id="rightbottom">
+			</div>
+			
+		</div>
+		
+		<div id="sisubottom">
+		</div>
+		
+		<div id="footer">
+		
+			<p><a href=Kontakt.html>Kontakt</a></p>
+		
+		</div>
+
+	</div>
 
 </body>
 </html>

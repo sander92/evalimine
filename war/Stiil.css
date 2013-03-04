@@ -1,0 +1,174 @@
+body
+{
+	background-image: url('Background/viiking.jpg');
+	background-repeat: no-repeat;
+	background-position:center top;
+}
+
+a,p,h1
+{
+	font-family:"Copperplate Gothic Light","Century Gothic", sans-serif;
+}
+
+div
+{
+	display:block;
+}
+
+ul
+{
+	list-style-type:none;
+}
+
+li
+{
+	float:left;
+}
+
+a:link
+{
+color:#7A5200;
+}
+
+#tiitel a
+{
+text-decoration:none;
+color:#7A5200;
+}
+
+#navigation a:hover
+{
+	background-color:#8A5C00;
+	color:#1E1400;
+}
+
+#navigation a:link, a:visited
+{
+	display:block;
+	text-decoration:none;
+	font-size:14px;
+	color:#7A5200;
+	padding-top:7px;
+	font-weight:bold;
+	height:22px;
+	width:125px;
+	text-align:center;
+	text-transform:uppercase;
+}
+
+body.Pealeht a.Pealeht,
+body.Kandidaadid a.Kandidaadid,
+body.Statistika a.Statistika,
+body.Vote a.Vote
+{
+	background-color:#8A5C00;
+	color:#1E1400;
+}
+
+#container
+{
+	width:1030px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#tiitel
+{
+	font-size:18px;
+}
+
+#navibar
+{
+	background-image:url("Background/navi.png");
+	height:70px;
+	width:1080px;
+	margin-left:-25px;
+}
+
+#navigation li
+{
+	margin-top:22px;
+	margin-left:50px;
+	margin-right:auto;
+}
+
+#navigation
+{
+	margin-top:200px;
+	height:30px;
+	margin:auto;
+	text-align:center;
+}
+
+#sisutop
+{
+	background-image:url("Background/top.png");
+	height:49px;
+}
+	
+#sisu
+{
+	color:#7A5200;
+	text-align:center;
+	height:800px;
+	background-image:url("Background/taust.png");
+}
+
+#left
+{
+	float:left;
+	width:360px;
+	margin-left:20px;
+	text-align:center;
+}
+
+#righttop
+{
+	background-image:url("Background/righttop.png");
+	background-position:right;
+	background-repeat:no-repeat;
+	height:30px;
+	margin-right:25px;
+}
+
+#right
+{
+	display:block-inline;
+	float:right;
+	width:620px;
+	height:600px;
+	background-image:url("Background/right.png");
+	background-repeat:repeat-y;
+	background-position:right;
+	margin-top:-16px;
+	margin-right:25px;
+}
+
+#right p
+{
+	text-align:center;
+}
+
+#rightbottom
+{
+	background-image:url("Background/rightbottom.png");
+	background-position:right;
+	background-repeat:no-repeat;
+	height:30px;
+	margin-right:25px;
+	clear:both;
+}
+
+#sisubottom
+{
+	background-image:url("Background/bottom.png");
+	background-repeat:no-repeat;
+	height:58px;
+}
+
+#footer
+{
+	clear:both;
+	text-align:center;
+	color:grey;
+}

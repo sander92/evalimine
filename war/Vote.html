@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="Evalimised.css">
+	<link rel="stylesheet" type="text/css" href="Stiil.css">
+	<link rel="stylesheet" type="text/css" href="Vote.css">
 	<link rel="stylesheet" type="text/css" href="tree.css">
     <script type="text/javascript" src="script.js">
     </script>
@@ -9,49 +10,78 @@
 </head>
 <body class="Vote">
 
-<div id="container">
-<a id = "pilt" href=Evalimised.html><img alt="E-Valimised" src="hIcon.png" class="ikoon"></a>
-<div>
-<ul class="navigation">
-	<li><a class="Pealeht" href=Evalimised.html>Pealeht</a></li>
-	<li><a class="Vote" href=Vote.html>H‰‰letama</a></li>
-	<li><a class="Kandidaadid" href=Kandidaadid.html>Kandidaadid</a></li>
-	<li><a class="Statistika" href=Statistika.html>Statistika</a></li>
-	<li><a class="Logi" href=Evalimised.html>Sisene</a></li>
-</ul>
-
-</div>
-</div>
-
-
-<div class="puulist">
-	<ol class="tree">
-		<li>
-			<label>Keskerakond</label> <input type="checkbox" unchecked > 
-			<ol>
-				<li><a href="Edgar.html">Edgar</a></li>
-			</ol>
-		</li>
+	<div id="container">
+		<div id="tiitel">
+			<h1><a href=Evalimised.html>E-VALIMISED</a></h1>
+		</div>
+		<div id="navibar">
+			<ul id="navigation">
+				<li><a class="Pealeht" href=Evalimised.html>Pealeht</a></li>
+				<li><a class="Vote" href=Vote.html>H‰‰letama</a></li>
+				<li><a class="Kandidaadid" href=Kandidaadid.html>Kandidaadid</a></li>
+				<li><a class="Statistika" href=Statistika.html>Statistika</a></li>
+				<li><a class="Logi" href=Evalimised.html>Sisene</a></li>
+			</ul>
+		</div>
 		
-		<li>
-			<label>Reformierakond</label> <input type="checkbox" unchecked > 
-			<ol>
-				<li><a href="Ansip.html">Andrus</a></li>
-			</ol>
-		</li>
+		<div id="sisutop">
+		</div>
 		
-			<li>
-			<label>Rohelised</label> <input type="checkbox" unchecked > 
-			<ol>
-				<li><a href="Peeter.html">Peeter</a></li>
-			</ol>
-		</li>
+		<div id="sisu">
+			<div id="righttop">
+			</div>
+			<div id="left">
+				<a onClick="createPopup('LisaKandidaadiks.html','Lisa end kandidaadiks')" id="nupp">Lisa enda kandidatuur</a>
+				<div class="puulist">
+					<ol class="tree">
+						<li>
+							<label>Keskerakond</label> <input type="checkbox" unchecked > 
+							<ol>
+								<li><a href="Edgar.html">Edgar</a></li>
+							</ol>
+						</li>
+						
+						<li>
+							<label>Reformierakond</label> <input type="checkbox" unchecked > 
+							<ol>
+								<li><a href="Ansip.html">Andrus</a></li>
+							</ol>
+						</li>
+						
+						<li>
+							<label>Rohelised</label> <input type="checkbox" unchecked > 
+							<ol>
+								<li><a href="Peeter.html">Peeter</a></li>
+							</ol>
+						</li>
+						
+					</ol>
+				</div>
+			</div>
+			<div id="right">
+				
+				<p>Vali keegi.</p>
+				
+			</div>
+
+			<div id="rightbottom">
+			</div>
+			
+		</div>
 		
-	</ol>
-</div>
+		<div id="sisubottom">
+		</div>
+		
+		<div id="footer">
+		
+			<p><a href=Kontakt.html>Kontakt</a></p>
+		
+		</div>
+
+	</div>
 
 
-<a onClick="createPopup('LisaKandidaadiks.html','Lisa end kandidaadiks')">Lisa enda kandidatuur</a>
+</body>
 
 </body>
 </html>

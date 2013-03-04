@@ -1,0 +1,62 @@
+#kaart
+{
+	height: 300px;
+	width: 350px;
+	border:2px solid black;
+}
+
+.pea {
+	position: absolute;
+	top: 150px;
+	width: 580px;
+	text-align: center;
+	margin-right: 15px;
+	padding: 5px;
+}
+
+.pea#tabel {
+	border:0px;
+	background-color: #362C16;
+	margin-top: 100px;
+	margin-left: 20px;
+	font-size: 11pt;
+	text-align: left;
+}
+
+.pea#tabel thead tr th {
+	background-color:#1E1400;
+	border: 1px solid black;
+	color: #8A5C00;
+	padding: 3px;
+}
+.pea#tabel thead tr .header{
+	background-image: url(images/sort_default.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+
+.pea#tabel tbody td {
+	color: #1E1400;
+	padding: 3px;
+	background-color: #906F2B;
+	vertical-align: top;
+}
+.pea#tabel thead tr .headerSortDown {
+	background-image: url(images/sort_asc.gif);
+}
+
+.pea#tabel thead tr .headerSortUp {
+	background-image: url(images/sort_desc.gif);
+}
+.pea#tabel thead tr .headerSortDown, .pea#tabel thead tr .headerSortUp {
+	background-color: #8A5C00;
+	color:#1E1400;
+}
+.pea#raadio {
+	margin-top: 60px;
+}
+
+.printer a:link,a:hover {
+	cursor: pointer;
+}

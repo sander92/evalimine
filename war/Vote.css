@@ -1,0 +1,85 @@
+#lisaend:hover {
+	/*clip: auto;*/
+	position:relative;
+	top: 25px;
+	padding: 10px;
+	color: teal;
+	font-family: serif;
+	font-style: italic;
+	text-transform: uppercase;
+	text-shadow: 15px -7px 7px #888888;
+}
+
+#lisaend {
+	/*clip: auto;*/
+	position:relative;
+	top: 25px;
+	padding: 10px;
+	color: teal;
+	font-family: serif;
+	font-style: italic;
+	text-transform: uppercase;
+}
+
+/* tree */
+label
+{
+	z-index:1;
+}
+
+.tree{
+	position: absolute;
+	top: 165px;
+}
+	
+.tree li 
+{ 
+	position: relative; 
+	margin-left: -15px;
+	list-style: none;
+}
+	
+.tree li input
+{
+	position: absolute;
+	left: 0;
+	margin-left: 0;
+	opacity: 0;
+	z-index: 2;
+	cursor: pointer;
+	height: 1em;
+	width: 1em;
+	top: 0;
+}
+.tree li input + ol
+{
+	background: url(toggle-small-expand.png) 40px 0 no-repeat;
+	margin: -0.938em 0 0 -44px;
+	height: 1em;
+}
+.tree li input + ol > li { display: none; margin-left: -14px  }
+.tree li label
+{
+	cursor: pointer;
+	display: block;
+	padding-left: 27px;
+}
+
+.tree li input:checked + ol
+{
+	background: url(toggle-small.png) 40px 5px no-repeat;
+	margin: -1.25em 0 0 -44px; 
+	padding: 1.563em 0 0 80px;
+	height: auto;
+}
+.tree li input:checked + ol > li { 
+	display: block; margin: 0 0 0.125em;  
+}
+.tree li input:checked + ol > li:last-child { 
+	margin: 0 0 0.063em;
+}
+
+#nupp
+{
+	cursor: pointer;
+}
