@@ -3,6 +3,12 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="Stiil.css">
 	<link rel="stylesheet" type="text/css" href="Kandidaadid.css">
+	<link rel="stylesheet" type="text/css" href="Statistika.css" media="screen">
+	<script src="jquery-latest.js"></script>
+	<script src="jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="progress.js"></script>
+    
 <title>E-Valimised: kandidaadid</title>
 </head>
 
@@ -26,35 +32,50 @@
 		</div>
 		<div id="sisu">
 			<div id="left">
-				Eesnimi: <input type="text" name="firstname" id="nimi"><br>
-				Perenimi: <input type="text" name="lastname" id="nimi">
+				Eesnimi: <input type="text" name="firstname" id="firstname"><br>
+				Perenimi: <input type="text" name="lastname" id="lastname">
 				
 				<form class="vorm">
 					<div>
 						<p id="piirkond">Piirkond: </p>
-							<select name="piirkond" id="piirkond">
-							<option value="P1">Harjumaa</option>
-							<option value="P2">Tartumaa</option>
-							<option value="P3">Saaremaa</option>
+							<select name="piirkond" id="regionselector">
+							<option selected="selected"></option>
+							<option>Harjumaa</option>
+							<option>Tartumaa</option>
+							<option>Saaremaa</option>
 							</select>
 					</div>
 					<div>
 						<p id="erakond">Erakond: </p>
-							<select name="erakond" id="erakond">
-							<option value="E1">Keskerakond</option>
-							<option value="E2">Reformierakond</option>
-							<option value="E3">Rohelised</option>
+							<select name="erakond" id="partyselector">
+							<option selected="selected"></option>
+							<option>Keskerakond</option>
+							<option>Reformierakond</option>
+							<option>Rohelised</option>
 							</select>
-					</div><br>
-					<button id="otsi">Otsi kandidaati</button>
+					</div><br>					
 			</form>
-				
+			
+			<button id="otsi" onClick="waiter()">Otsi kandidaati</button>
 			</div>
 			<div id="righttop">
 			</div>
 				
 			<div id="right">
-				<p>Siin saate kandidaati otsida. Aga alles kunagi tulevikus.</p>
+				<p id="results">Siin saate kandidaati otsida. Aga alles kunagi tulevikus.</p>
+				<p></p>
+				<p></p>
+				<table class="pea" id="tabel" border="1">
+					<thead>
+						<tr>
+							<th>Nimi</th>
+							<th>Piirkond</th>
+							<th>Erakond</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
 			</div>
 			<div id="rightbottom">
 			</div>

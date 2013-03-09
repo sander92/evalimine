@@ -1,5 +1,6 @@
 $(document).ready(function() 
     { 
-        $("#tabel").tablesorter( {sortList: [[0,0]]} ); 
+    	if($("#tabel tbody tr").size() > 0)
+        	$("#tabel").tablesorter( {sortList: [[0,0]]} ); 
     } 
 ); 
