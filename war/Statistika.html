@@ -8,6 +8,7 @@
 	<script src="jquery-latest.js"></script>
 	<script src="jquery.tablesorter.js"></script>
 	<script type="text/javascript" src="myTablesorter.js"></script>
+	<script type="text/javascript" src="progress.js"></script>
 	
 <title>E-Valimised: statistika</title>
 </head>
@@ -35,9 +36,9 @@
 			<div id="left">
 				<p>Vaata kes on kõige rohkem hääli saanud ja andnud</p>
 				<form>
-					<input type="radio" name="liik" value="partei">Parteid &emsp;&emsp;
-					<input type="radio" name="liik" value="piirkond">Piirkonnad &emsp;&emsp;
-					<input type="radio" name="liik" value="kandidaat">Kandidaadid
+					<input type="radio" name="liik" value="partei" onClick="waiter()">Parteid &emsp;&emsp;
+					<input type="radio" name="liik" value="piirkond" onClick="waiter()">Piirkonnad &emsp;&emsp;
+					<input type="radio" name="liik" value="kandidaat" onClick="waiter()">Kandidaadid
 				</form>
 				<img alt="Kaart" src="kaart.png" id="kaart">
 			</div>
