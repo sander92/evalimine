@@ -8,6 +8,7 @@ body
 a,p,h1
 {
 	font-family:"Copperplate Gothic Light","Century Gothic", sans-serif;
+	color:black;
 }
 
 div
@@ -25,21 +26,14 @@ li
 	float:left;
 }
 
-a:link
-{
-color:#7A5200;
-}
-
 #tiitel a
 {
 text-decoration:none;
-color:#7A5200;
 }
 
 #navigation a:hover
 {
-	background-color:#8A5C00;
-	color:#1E1400;
+	background-color:#fff999;
 }
 
 #navigation a:link, a:visited
@@ -47,7 +41,6 @@ color:#7A5200;
 	display:block;
 	text-decoration:none;
 	font-size:14px;
-	color:#7A5200;
 	padding-top:7px;
 	font-weight:bold;
 	height:22px;
@@ -61,8 +54,7 @@ body.Kandidaadid a.Kandidaadid,
 body.Statistika a.Statistika,
 body.Vote a.Vote
 {
-	background-color:#8A5C00;
-	color:#1E1400;
+	background-color:#fff999;
 }
 
 #container
@@ -80,14 +72,13 @@ body.Vote a.Vote
 #navibar
 {
 	background-image:url("Background/navi.png");
-	height:70px;
-	width:1080px;
-	margin-left:-25px;
+	height:64px;
+	width:1031px;
 }
 
 #navigation li
 {
-	margin-top:22px;
+	margin-top:16px;
 	margin-left:50px;
 	margin-right:auto;
 }
@@ -100,18 +91,14 @@ body.Vote a.Vote
 	text-align:center;
 }
 
-#sisutop
-{
-	background-image:url("Background/top.png");
-	height:49px;
-}
 	
 #sisu
 {
-	color:#7A5200;
 	text-align:center;
 	height:800px;
+	width:1026px;
 	background-image:url("Background/taust.png");
+	border-radius:10px;
 }
 
 #left
@@ -122,26 +109,15 @@ body.Vote a.Vote
 	text-align:center;
 }
 
-#righttop
-{
-	background-image:url("Background/righttop.png");
-	background-position:right;
-	background-repeat:no-repeat;
-	height:30px;
-	margin-right:25px;
-}
-
 #right
 {
 	display:block-inline;
 	float:right;
 	width:620px;
-	height:600px;
+	height:800px;
 	background-image:url("Background/right.png");
 	background-repeat:repeat-y;
 	background-position:right;
-	margin-top:-16px;
-	margin-right:25px;
 }
 
 #right p
@@ -149,26 +125,10 @@ body.Vote a.Vote
 	text-align:center;
 }
 
-#rightbottom
-{
-	background-image:url("Background/rightbottom.png");
-	background-position:right;
-	background-repeat:no-repeat;
-	height:30px;
-	margin-right:25px;
-	clear:both;
-}
-
-#sisubottom
-{
-	background-image:url("Background/bottom.png");
-	background-repeat:no-repeat;
-	height:58px;
-}
-
 #footer
 {
-	clear:both;
 	text-align:center;
-	color:grey;
+	background-color:#fff999;
+	border-radius:5px;
+	height:100px;
 }

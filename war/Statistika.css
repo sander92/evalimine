@@ -16,7 +16,7 @@
 
 .pea#tabel {
 	border:0px;
-	background-color: #362C16;
+	background-color:#99955C;
 	margin-top: 100px;
 	margin-left: 20px;
 	font-size: 11pt;
@@ -24,9 +24,8 @@
 }
 
 .pea#tabel thead tr th {
-	background-color:#1E1400;
+	background-color:#99955C;
 	border: 1px solid black;
-	color: #8A5C00;
 	padding: 3px;
 }
 .pea#tabel thead tr .header{
@@ -37,9 +36,8 @@
 }
 
 .pea#tabel tbody td {
-	color: #1E1400;
 	padding: 3px;
-	background-color: #906F2B;
+	background-color: white;
 	vertical-align: top;
 }
 .pea#tabel thead tr .headerSortDown {
@@ -50,8 +48,7 @@
 	background-image: url(images/sort_desc.gif);
 }
 .pea#tabel thead tr .headerSortDown, .pea#tabel thead tr .headerSortUp {
-	background-color: #8A5C00;
-	color:#1E1400;
+	background-color: #CFCA7C;
 }
 .pea#raadio {
 	margin-top: 60px;
