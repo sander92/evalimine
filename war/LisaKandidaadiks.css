@@ -1,0 +1,11 @@
+.warning {
+	color: red;
+	font-style:italic;
+}
+
+.invalid {
+	outline:none;
+    border-color:red;
+    box-shadow:0 0 2px red;
+}
+

@@ -42,6 +42,11 @@ $("#otsi").click(function() {
   }
 
 });
+$('#showInfo').click(function() {
+  	$.getJSON("json/candidate.json", function(data){
+	  	getCandidateInfo(data);
+	}); 
+});
 
 function createTable(candidates, givenParty, givenRegion) {
 	//var row = "<tr><td>" + candidates[0]['person']['name'] + "</td><td>" + candidates[0]['region']['name'] + "</td><td>" + candidates[0]['region']['name'] + "</td></tr>";
@@ -74,6 +79,7 @@ function createTable(candidates, givenParty, givenRegion) {
 		for (j in cols) 
 			row.append(cols[j]);
 		//append data to table
+		row.addClass("candidateClickable");
 		$("#tabel tbody").append(row);
 	}	
 
@@ -92,6 +98,12 @@ function createTable(candidates, givenParty, givenRegion) {
 		$('#tabel').hide();
 	}
 }
-}); 
+
+function getCandidateInfo(candidate) {
+	$('#partyInfo').text(candidate.party.name);
+	$('#regionInfo').text(candidate.region.name);
+	$('#personInfo').text(candidate.person.name);
+}
+});
 
 
