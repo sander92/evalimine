@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function otsimine() {
 
 $("#tabel").tablesorter();
 $('#tabel').hide();
@@ -104,6 +104,6 @@ function getCandidateInfo(candidate) {
 	$('#regionInfo').text(candidate.region.name);
 	$('#personInfo').text(candidate.person.name);
 }
-});
+}
 
 

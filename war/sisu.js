@@ -10,11 +10,4 @@ function sisu(nimi)
 	//}
 	//$("body").load(nimi+".html");
 	
-	/*$.getScript("jquery-latest.js");
-	$.getScript("jquery.tablesorter.js");
-	
-	$.getScript("myTablesorter.js");
-	$.getScript("progress.js");
-	$.getScript("menu.js");
-	$.getScript("sisu.js");*/
 }
