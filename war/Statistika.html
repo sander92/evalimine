@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 
 	<link rel="stylesheet" type="text/css" href="Stiil.css" media="screen"> 
 	<link rel="stylesheet" type="text/css" href="Statistika.css" media="screen">
-	<link rel="stylesheet" type="css" href="print.css" media="print">
+	<link rel="stylesheet" type="text/css" href="print.css" media="print">
 	<script src="jquery-latest.js"></script>
 	<script src="jquery.tablesorter.js"></script>
 	<script type="text/javascript" src="myTablesorter.js"></script>
 	<script type="text/javascript" src="progress.js"></script>
+	<script type="text/javascript" src="menu.js"></script>
+	<script type="text/javascript" src="sisu.js"></script>
 	
 <title>E-Valimised: statistika</title>
 </head>
@@ -22,7 +25,7 @@
 		<div id="navibar">
 			<ul id="navigation">
 				<li><a class="Pealeht" href=Evalimised.html>Pealeht</a></li>
-				<li><a class="Vote" href=Vote.html>H‰‰letama</a></li>
+				<li><a class="Vote" href=Vote.html>H√§√§letama</a></li>
 				<li><a class="Kandidaadid" href=Kandidaadid.html>Kandidaadid</a></li>
 				<li><a class="Statistika" href=Statistika.html>Statistika</a></li>
 				<li><a class="Logi" href=Evalimised.html>Sisene</a></li>
@@ -31,7 +34,7 @@
 		
 		<div id="sisu">
 			<div id="left">
-				<p>Vaata kes on kıige rohkem h‰‰li saanud ja andnud</p>
+				<p>Vaata kes on k√µige rohkem h√§√§li saanud ja andnud</p>
 				<form>
 					<input type="radio" name="liik" value="partei" onClick="waiter()">Parteid &emsp;&emsp;
 					<input type="radio" name="liik" value="piirkond" onClick="waiter()">Piirkonnad &emsp;&emsp;
@@ -40,12 +43,12 @@
 				<img alt="Kaart" src="kaart.png" id="kaart">
 			</div>
 			<div id="right">
-				<a onclick="window.print()" class="printer">Prindi</a><br>
+				<a href="#" onclick="window.print()" class="printer">Prindi</a><br>
 				<table border="1" class="pea" id="tabel">
 					<thead>
 						<tr>
 							<th>Piirkond</th>
-							<th>H‰‰li</th>
+							<th>H√§√§li</th>
 							<th>Erakond</th>
 							<th>Populaarseim kandidaat</th>
 						</tr>

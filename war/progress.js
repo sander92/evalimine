@@ -9,5 +9,5 @@ function waiter()
 function myStopFunction()
 {
 clearInterval(myVar);
-$('*').css('cursor','default');
+$('*').css('cursor','auto');
 }
