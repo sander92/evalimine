@@ -13,7 +13,7 @@
 	
 	<script type="text/javascript" src="menu.js"></script>
 	<script type="text/javascript" src="sisu.js"></script>
-	<script type="text/javascript" src="chBack.js"></script>
+	<!-- <script type="text/javascript" src="chBack.js"></script> -->
 	
 	<script type="text/javascript" src="jquery.tablesorter.js"></script>
 	<script type="text/javascript" src="myTablesorter.js"></script>
@@ -21,22 +21,22 @@
 	
 	<script type="text/javascript" src="search.js"></script>
     <script type="text/javascript" src="validate.js"></script>
+
 	
 
 	<title>E-Valimised</title>
 	
 </head>
 <body class= "Pealeht">
+		<p id="kaitse">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
+
 	<div id="container">
 		<div id="tiitel">
-			<p class="disclaimer">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
 			<h1><a href=Evalimised.html>E-VALIMISED</a></h1>
-			
 		</div>
 		<div id="navibar">
 			
 		</div>
-		
 		<div id="peasisu">
 		
 			<div id="sisu">
@@ -53,11 +53,10 @@
 			</div>
 		</div>
 	<div id="footer">
-		<p><a href=Kontakt.html>Kontakt</a></p>
-		<p class="disclaimer">Rakenduses realiseeritud e-valimiste näide on realiseeritud tehnoloogiate praktiseerimise eesmärgil 
-		ning ei ole mõeldud reaalsete e-valimiste korraldamiseks. 
-		Kokkulangevused reaalse e-valimiste protsessiga on juhuslikud.</p>
+		<p><a href=#Kontakt onClick=sisu("Kontakt")>Kontakt</a></p>
 	</div>
+		<p id="kaitse">Rakenduses realiseeritud e-valimiste näide on realiseeritud tehnoloogiate praktiseerimise eesmärgil ning ei ole mõeldud reaalsete e-valimiste korraldamiseks.</p>
+		<p id="kaitse">Kokkulangevused reaalse e-valimiste protsessiga on juhuslikud</p>
 
 	</div>
 

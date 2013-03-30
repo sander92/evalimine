@@ -1,8 +1,12 @@
+
 $(document).ready(function(){
 	hideWarnings();
 	$("#submit").click(function() {
-		validateForm();
-
+		voiblisada=validateForm();
+		if (voiblisada){
+			alert("Tere tulemast valimisnimekirja");
+			window.close();
+		}
 	}); 
 
 	function validateForm() {
@@ -32,7 +36,7 @@ $(document).ready(function(){
 			$("#partySelector").addClass("invalid");
 			valid = false;
 		}
-
+		return valid;
 	}
 
 	function hideWarnings() {

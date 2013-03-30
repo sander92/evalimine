@@ -12,58 +12,60 @@
 	<title>E-Valimised: hääletamine</title>
 </head>
 <body class="Vote">
+		<p id="kaitse">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
 
 	<div id="container">
 		<div id="tiitel">
-			<p class="disclaimer">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
 			<h1><a href=Evalimised.html>E-VALIMISED</a></h1>
 		</div>
 		<div id="navibar">
 			
 		</div>
-		
-		<div id="sisu">
-			<div id="left">
-				<a onClick="createPopup('LisaKandidaadiks.html','Lisa end kandidaadiks')" id="nupp">Lisa enda kandidatuur</a>
-				<div class="puulist">
-					<ol class="tree">
-						<li>
-							<label>Keskerakond</label> <input type="checkbox" unchecked > 
-							<ol>
-								<li><a href="Edgar.html">Edgar</a></li>
-							</ol>
-						</li><br>
-						
-						<li>
-							<label>Reformierakond</label> <input type="checkbox" unchecked > 
-							<ol>
-								<li><a href="Ansip.html">Andrus</a></li>
-							</ol>
-						</li><br>
-						
-						<li>
-							<label>Rohelised</label> <input type="checkbox" unchecked > 
-							<ol>
-								<li><a href="Peeter.html">Peeter</a></li>
-							</ol>
-						</li>
-						
-					</ol>
+		<div id="peasisu">
+			<div id="sisu">
+				<div id="left">
+					<div id="sees">
+						<a onClick="createPopup('LisaKandidaadiks.html','Lisa end kandidaadiks')" id="nupp">Lisa enda kandidatuur</a>
+					</div>
+					<div class="puulist">
+						<ol class="tree">
+							<li>
+								<label>Keskerakond</label> <input type="checkbox" unchecked > 
+								<ol>
+									<li><a href="#" onclick=isik("Edgar")>Edgar</a></li>
+								</ol>
+							</li><br>
+							
+							<li>
+								<label>Reformierakond</label> <input type="checkbox" unchecked > 
+								<ol>
+									<li><a href="#" onclick=isik("Andrus")>Andrus</a></li>
+								</ol>
+							</li><br>
+							
+							<li>
+								<label>Rohelised</label> <input type="checkbox" unchecked > 
+								<ol>
+									<li><a href="#" onclick=isik("Peeter")>Peeter</a></li>
+								</ol>
+							</li>
+							
+						</ol>
+					</div>
 				</div>
-			</div>
-			<div id="right">
+				<div id="right">
+					
+					<p>Vali keegi.</p>
+					
+				</div>
 				
-				<p>Vali keegi.</p>
-				
 			</div>
-			
 		</div>
 		<div id="footer">
 			<p><a href=Kontakt.html>Kontakt</a></p>
-			<p class="disclaimer">Rakenduses realiseeritud e-valimiste näide on realiseeritud tehnoloogiate praktiseerimise eesmärgil 
-			ning ei ole mõeldud reaalsete e-valimiste korraldamiseks. 
-			Kokkulangevused reaalse e-valimiste protsessiga on juhuslikud.</p>
 		</div>
+		<p id="kaitse">Rakenduses realiseeritud e-valimiste näide on realiseeritud tehnoloogiate praktiseerimise eesmärgil ning ei ole mõeldud reaalsete e-valimiste korraldamiseks.</p>
+		<p id="kaitse">Kokkulangevused reaalse e-valimiste protsessiga on juhuslikud</p>
 
 	</div>
 

@@ -8,8 +8,9 @@
         <servlet-name>sign</servlet-name>
         <url-pattern>/sign</url-pattern>
     </servlet-mapping>
+    
     <welcome-file-list>
-        <welcome-file>guestbook.jsp</welcome-file>
+        <welcome-file>evalimised.jsp</welcome-file>
     </welcome-file-list>
   
   <servlet>
@@ -40,5 +41,30 @@
     <servlet-name>SystemServiceServlet</servlet-name>
     <url-pattern>/_ah/spi/*</url-pattern>
   </servlet-mapping>
+  
+  
+  
+  
+  
+  <servlet>
+      <servlet-name>EchoServletExample</servlet-name>
+      <servlet-class>evalimised.server.EchoServlet</servlet-class>
+   </servlet>
+   
+   <servlet-mapping>
+      <servlet-name>EchoServletExample</servlet-name>
+      <url-pattern>/echo</url-pattern>
+   </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 </web-app>
