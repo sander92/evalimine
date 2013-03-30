@@ -17,11 +17,16 @@ function otsimine() {
 			}); */
 			$.ajax({
 				type : 'GET',
-				url : 'json/findCandidatesByPartyAndRegion.json',
+				//url : 'json/findCandidatesByPartyAndRegion.json',
+				url: '/sign',
+				 data: { 
+        		 'foo': 'bar', 
+        		 'calibri': 'nolibri' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+   				},
 				dataType : 'json',
 				success : function(data) {
-					var candidates = data['candidates']
-					createTable(candidates, party, region);
+					//var candidates = data['candidates']
+					//createTable(candidates, party, region);
 				},
 				error : function(xhr, ajaxOptions, thrownError) {
 					alert(thrownError);
