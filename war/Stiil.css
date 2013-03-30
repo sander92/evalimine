@@ -122,6 +122,11 @@ body.Vote a.Vote
 
 #right p
 {
+	padding:10px;
+}
+
+#right p
+{
 	text-align:center;
 }
 
