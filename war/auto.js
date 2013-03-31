@@ -1,6 +1,6 @@
-var names=getList();
+var names=["Magdalena Malejeva"];
 function autoc() {
-	names = getList();/*[ "Magdalena Malejeva", "Harme Näljahäda", "Olga Oravasaba",
+	names = getData();/*[ "Magdalena Malejeva", "Harme Näljahäda", "Olga Oravasaba",
 			"Eduard Ekskavaator", "Ferdinand Fuksia", "Gerhard Gätegõverdus",
 			"Harald Hamster", "Ildegaard Ilumeel", "Janaida Jalutova",
 			"Kõikme Kannatameära", "Filbert Hollins", "Ulrich Van Andringa",

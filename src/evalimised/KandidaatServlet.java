@@ -35,8 +35,8 @@ public class KandidaatServlet extends HttpServlet{
                 Candidate candidate = new Candidate();
                 candidate.setFName(rs.getString("FirstName"));
                 candidate.setLName(rs.getString("LastName"));
-                candidate.setParty(rs.getString("Party"));
-                candidate.setArea(rs.getString("Area"));
+                candidate.setParty(rs.getString("PartyName"));
+                candidate.setArea(rs.getString("AreaName"));
                 candidates.add(candidate);
 	      
 

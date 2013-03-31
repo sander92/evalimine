@@ -3,20 +3,22 @@ function setData(d){
 	ldata=d;
 }
 
+function getData(){
+	alert(data);
+	return ldata;
+}
+
 function getList() {
 		try{
-			var fName = $("#name").val();
-			var lName = $("#name").val();
+			var flName = $("#name").val().trim();
 		}
 		catch (e) {
-			fName="Ma"
-			lName="";
+			flName="Ma";
 		}
 		
-		var party = "";
-		var region = "";
 
-		if (fName != "") {
+
+		if (flName != "") {
 			/*$.getJSON("json/findCandidatesByPartyAndRegion.json", function(data){
 			  	var candidates = data['candidates']
 			  	createTable(candidates, party, region);
@@ -26,11 +28,12 @@ function getList() {
 				//url : 'json/findCandidatesByPartyAndRegion.json',
 				url: '/Poliitik',
 				 data: { 
-        		 FirstName: fName// <-- the $ sign in the parameter name seems unusual, I would avoid it
+        		 "Name": flName// <-- the $ sign in the parameter name seems unusual, I would avoid it
    				},
 				dataType : 'json',
 				success : function(data) {
 					setData(data);
+					alert(data);
 					//var candidates = data['candidates']
 					//createTable(candidates, party, region);
 				},
@@ -38,18 +41,8 @@ function getList() {
 					alert(thrownError);
 				}
 			});
-		} else if (region != "") {
-			$.getJSON("json/findCandidatesByRegion.json", function(data) {
-				var candidates = data['candidates']
-				createTable(candidates, null, region);
-			});
-		} else if (party != "") {
-			$.getJSON("json/findCandidatesByParty.json", function(data) {
-				var candidates = data['candidates']
-				createTable(candidates, party, null);
-			});
+		
 		}
-
 	}
 	
 /*	
