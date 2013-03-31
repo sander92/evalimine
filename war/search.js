@@ -8,8 +8,9 @@ function otsimine() {
 		var fName = $("#firstname").attr("value");
 		var lName = $("#lastname").attr("value");
 		var party = $("#partyselector").val();
-		var region = $("#regionselector").attr("value");
-
+		var region = $("#regionselector").val();
+		//alert(party);
+		//alert(region);
 		if (party != "" && region != "") {
 			/*$.getJSON("json/findCandidatesByPartyAndRegion.json", function(data){
 			  	var candidates = data['candidates']
@@ -20,13 +21,16 @@ function otsimine() {
 				//url : 'json/findCandidatesByPartyAndRegion.json',
 				url: '/sign',
 				 data: { 
-        		 'foo': 'bar', 
-        		 'calibri': 'nolibri' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+        		 'fName': fName, 
+        		 'lName': lName,
+        		 'party': party,
+        		 'area': region
    				},
 				dataType : 'json',
 				success : function(data) {
 					//var candidates = data['candidates']
 					//createTable(candidates, party, region);
+					alert(data);
 				},
 				error : function(xhr, ajaxOptions, thrownError) {
 					alert(thrownError);
