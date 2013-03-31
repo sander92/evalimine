@@ -1,7 +1,7 @@
 function otsimine() {
 
 	$("#tabel").tablesorter();
-	$('#tabel').hide();
+	//$('#tabel').hide();
 
 	$("#otsi").click(function() {
 
