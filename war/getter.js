@@ -24,7 +24,7 @@ function getList() {
 			$.ajax({
 				type : 'GET',
 				//url : 'json/findCandidatesByPartyAndRegion.json',
-				url: '/sign',
+				url: '/Poliitik',
 				 data: { 
         		 FirstName: fName// <-- the $ sign in the parameter name seems unusual, I would avoid it
    				},
