@@ -18,7 +18,7 @@ public class PoliitikuServlet extends HttpServlet{
 	  Connection c = null;
 	    try {
 	      DriverManager.registerDriver(new AppEngineDriver());
-	      c = DriverManager.getConnection("jdbc:google:rdbms://netivalimised2013:netivalimised/evalimised");
+	      c = DriverManager.getConnection("jdbc:google:rdbms://netivalimised2013:netivalimised/evalimised", "root", "");
 
 	      if(Name != "" ) {
 	    	  String statement = createQuery(Name);

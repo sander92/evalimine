@@ -46,7 +46,7 @@ function loginout() {
 
 	if (loggedin == true) {
 		hidesees();
-		document.getElementById("Login").innerHTML = "Välju";
+		document.getElementById("Login").innerHTML = "V&#228;lju";
 
 	}
 }

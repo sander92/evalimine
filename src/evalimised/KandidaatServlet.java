@@ -24,7 +24,7 @@ public class KandidaatServlet extends HttpServlet{
 	  Connection c = null;
 	    try {
 	      DriverManager.registerDriver(new AppEngineDriver());
-	      c = DriverManager.getConnection("jdbc:google:rdbms://netivalimised2013:netivalimised/evalimised");
+	      c = DriverManager.getConnection("jdbc:google:rdbms://netivalimised2013:netivalimised/evalimised", "root", "");
 	      
 	      String voterID = req.getParameter("voter");
     	  String statement = createQuery(voterID);

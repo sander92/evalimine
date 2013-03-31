@@ -1,10 +1,9 @@
-var names=["Magdalena Malejeva"];
+var names=["Magdalena Malejeva","Eduard Ekskavaator","Filbert Hollins","Ulrich Van Andringa"];
 function autoc() {
-	names = getData();/*[ "Magdalena Malejeva", "Harme Näljahäda", "Olga Oravasaba",
-			"Eduard Ekskavaator", "Ferdinand Fuksia", "Gerhard Gätegõverdus",
-			"Harald Hamster", "Ildegaard Ilumeel", "Janaida Jalutova",
-			"Kõikme Kannatameära", "Filbert Hollins", "Ulrich Van Andringa",
-			"Carl Zino" ];*/
+	vahenames=getData();
+	if(vahenames!=null){
+		names = vahenames;
+	}
 	
 	$("#name")
 			.autocomplete(
