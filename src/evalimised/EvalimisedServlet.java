@@ -48,7 +48,7 @@ public class EvalimisedServlet extends HttpServlet{
 	  }
 	
 	private static String createQuery(String fname, String lname, String party, String area) {
-		String beginning = "SELECT Person.FirstName AS 'FirstName', Person.LastName AS 'LastName'";
+		String beginning = "SELECT Person.FirstName, Person.LastName";
 		String middle = "";
 		String end = "WHERE ";
 		if(fname!="" && fname != null)
@@ -56,11 +56,11 @@ public class EvalimisedServlet extends HttpServlet{
 		if(lname!="" && lname != null)
 			end += "LastName=\""+lname+"\" AND ";
 		if(party!="" && party != null) {
-			beginning += ", Area.AreaName AS 'Area'";
+			beginning += ", Area.AreaName'";
 			end += "PartyID=\""+party+"\" AND ";
 		}
 		if(area!="" && area != null) {
-			beginning += ", Party.PartyName AS 'Party'";
+			beginning += ", Party.PartyName";
 			end += "AreaID=\""+area+"\" AND ";
 		}
 		if(party=="" && area=="" && party != null && area != null){
@@ -86,10 +86,10 @@ public class EvalimisedServlet extends HttpServlet{
 			      candidate.setFName(rs.getString("FirstName"));
 			      candidate.setLName(rs.getString("LastName"));
 			      if(party == "" || party == null){
-			    	  candidate.setParty(rs.getString("Party"));
+			    	  candidate.setParty(rs.getString("PartyName"));
 			      }
 			      if(area == "" || area == null){
-			    	  candidate.setArea(rs.getString("Area"));
+			    	  candidate.setArea(rs.getString("AreaName"));
 			      }
 			      candidates.add(candidate);
 			  }
