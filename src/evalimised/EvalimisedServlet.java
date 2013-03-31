@@ -56,7 +56,7 @@ public class EvalimisedServlet extends HttpServlet{
 		if(lname!="" && lname != null)
 			end += "LastName=\""+lname+"\" AND ";
 		if(party!="" && party != null) {
-			beginning += ", Area.AreaName'";
+			beginning += ", Area.AreaName";
 			end += "PartyID=\""+party+"\" AND ";
 		}
 		if(area!="" && area != null) {
@@ -64,8 +64,8 @@ public class EvalimisedServlet extends HttpServlet{
 			end += "AreaID=\""+area+"\" AND ";
 		}
 		if(party=="" && area=="" && party != null && area != null){
-			beginning += ", Area.AreaName AS 'Area'";
-			beginning += ", Party.PartyName AS 'Party'";
+			beginning += ", Area.AreaName";
+			beginning += ", Party.PartyName";
 
 		}
 		middle += "JOIN Party ON Person.PartyID = Party.Party_Id ";
