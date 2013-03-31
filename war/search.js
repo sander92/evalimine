@@ -5,50 +5,35 @@ function otsimine() {
 
 	$("#otsi").click(function() {
 
-		var fName = $("#firstname").attr("value");
-		var lName = $("#lastname").attr("value");
-		var party = $("#partyselector").val();
-		var region = $("#regionselector").val();
-		//alert(party);
-		//alert(region);
-		if (party != "" && region != "") {
-			/*$.getJSON("json/findCandidatesByPartyAndRegion.json", function(data){
-			  	var candidates = data['candidates']
-			  	createTable(candidates, party, region);
-			}); */
+		var fName = $("#name").attr("value");
+		//var lName = $("#lastname").attr("value");
+		var partyCode = $("#partyselector").val();
+		var regionCode = $("#regionselector").val();
+		var partyName = $("#partyselector option:selected").text();
+		var regionName = $("#regionselector option:selected").text();
+		if (partyCode != "" || regionCode != "" || fName != "" || lName != "") {
 			$.ajax({
 				type : 'GET',
-				//url : 'json/findCandidatesByPartyAndRegion.json',
 				url: '/sign',
 				 data: { 
         		 'fName': fName, 
-        		 'lName': lName,
-        		 'party': party,
-        		 'area': region
+        		 'lName': '',
+        		 'party': partyCode,
+        		 'area': regionCode
    				},
 				dataType : 'json',
 				success : function(data) {
-					//var candidates = data['candidates']
-					//createTable(candidates, party, region);
-					alert(data);
+					var candidates = data
+					createTable(candidates, partyName, regionName);
 				},
 				error : function(xhr, ajaxOptions, thrownError) {
 					alert(thrownError);
 				}
 			});
-		} else if (region != "") {
-			$.getJSON("json/findCandidatesByRegion.json", function(data) {
-				var candidates = data['candidates']
-				createTable(candidates, null, region);
-			});
-		} else if (party != "") {
-			$.getJSON("json/findCandidatesByParty.json", function(data) {
-				var candidates = data['candidates']
-				createTable(candidates, party, null);
-			});
 		}
 
 	});
+
 	$('#showInfo').click(function() {
 		$.getJSON("json/candidate.json", function(data) {
 			getCandidateInfo(data);
@@ -56,7 +41,6 @@ function otsimine() {
 	});
 
 	function createTable(candidates, givenParty, givenRegion) {
-		//var row = "<tr><td>" + candidates[0]['person']['name'] + "</td><td>" + candidates[0]['region']['name'] + "</td><td>" + candidates[0]['region']['name'] + "</td></tr>";
 		//clear previous table
 		$('#tabel tbody tr').remove();
 
@@ -64,17 +48,16 @@ function otsimine() {
 
 		for (i in candidates) {
 			//get values from json data
-			name = candidates[i]['person']['name'];
-			if (givenParty != null && givenRegion != null) {
-				region = givenRegion;
+			name = candidates[i]['firstName'] + " " + candidates[i]['lastName'];
+			if (givenParty == '')
+				party = candidates[i]['party'];
+			else
 				party = givenParty;
-			} else if (givenParty != null) {
-				region = candidates[i]['region']['name'];
-				party = givenParty;
-			} else if (givenRegion != null) {
-				party = candidates[i]['party']['name'];
+			if (givenRegion == '')
+				region = candidates[i]['area'];
+			else
 				region = givenRegion;
-			}
+			
 			//create new row with data
 			var cols = new Array();
 			cols[0] = $("<td></td>").text(name);

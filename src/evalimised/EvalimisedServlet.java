@@ -80,23 +80,22 @@ public class EvalimisedServlet extends HttpServlet{
 	
 	private static String createJSON(ResultSet rs, String party, String area){
 	      List<Candidate> candidates = new ArrayList<Candidate>();
-	      System.out.println(party);
-	      System.out.println(area);
 	      try {
 			while(rs.next()){
 			      Candidate candidate = new Candidate();
 			      candidate.setFName(rs.getString("FirstName"));
 			      candidate.setLName(rs.getString("LastName"));
-			      if(party == "" || party == null)
+			      if(party == "" || party == null){
 			    	  candidate.setParty(rs.getString("Party"));
-			      if(area == "" || area == null)
+			      }
+			      if(area == "" || area == null){
 			    	  candidate.setArea(rs.getString("Area"));
+			      }
 			      candidates.add(candidate);
 			  }
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	      Gson gson = new GsonBuilder().create();
           String candidatesJson = gson.toJson(candidates);
           return candidatesJson;

@@ -21,7 +21,7 @@ public class Candidate {
     	party = s;
     }
     void setArea(String s){
-    	party = s;
+    	area = s;
     }
 }
 
