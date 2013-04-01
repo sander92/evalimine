@@ -1,12 +1,26 @@
-var ldata;
+var ldata=null;
 function setLData(d){
 	ldata=d;
 }
 
-function getData(){
+
+function getLData(){
 	getList();
-	alert(ldata);
-	return ldata;
+	var myVar=setInterval(function(){
+			if(ldata!=null){
+				names=["Mari","Jüri"];
+				autoc();
+				clearTimeout(myVar);
+				alert(ldata.toString());
+				//return ldata;
+			}
+		},500)
+	
+	setTimeout(function(){
+		clearTimeout(myVar);
+		alert("listdata timeouti sees");
+		
+	},5000);
 }
 
 function getList() {
@@ -16,7 +30,7 @@ function getList() {
 		catch (e) {
 			flName="Ma";
 		}
-		alert(flName);
+		alert(flName.toString());
 
 
 		if (flName != "") {

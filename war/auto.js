@@ -1,11 +1,12 @@
 var names=["Magdalena Malejeva","Eduard Ekskavaator","Filbert Hollins","Ulrich Van Andringa"];
+getLData();
 function autoc() {
-	vahenames=getData();
-	//if(vahenames!=null){
-		names = vahenames;
-	//}
 	
-	$("#name")
+	//if(vahenames!=null){
+		//names = vahenames;
+	//}
+									   //!!!    !!!!     !!!!!!!!     !!!!!!!!!
+	$("#name")						///teha kuidagi nii, et see võtaks ajaxist neid
 			.autocomplete(
 					{
 						source : function(request, response) {
@@ -19,3 +20,6 @@ function autoc() {
 						minLength: 2
 					});
 }
+$("#name").onfocus=autoc;
+$("#name").onblur=autoc;
+
