@@ -24,8 +24,8 @@ public class SearchServlet extends HttpServlet{
 	      DriverManager.registerDriver(new AppEngineDriver());
 	      c = DriverManager.getConnection("jdbc:google:rdbms://netivalimised2013:netivalimised/evalimised");
 	      String statement;
-	      if((fName == "" || fName == null) && (lName == "" || lName == null) && 
-	    		  (party == "" || party == null) && (area == ""|| area == null)) {
+	      if((fName.equals("") || fName == null) && (lName.equals("") || lName == null) && 
+	    		  (party.equals("") || party == null) && (area.equals("")|| area == null)) {
 	    	  System.out.println("Getting all candidates");
 	    	  statement = "SELECT Person.FirstName, Person.LastName, Party.PartyName, Area.AreaName " +
 	    	  		"FROM Person JOIN Party ON Person.PartyID = Party.Party_Id JOIN Area ON Person.AreaID = Area.Area_Id";
@@ -58,22 +58,21 @@ public class SearchServlet extends HttpServlet{
 		String beginning = "SELECT Person.FirstName, Person.LastName";
 		String middle = "";
 		String end = "WHERE ";
-		if(fname!="" && fname != null)
-			end += "FirstName=\""+fname+"\" AND ";	
-		if(lname!="" && lname != null)
+		if(!(fname.equals("")) && fname != null)
+			end += "CONCAT(FirstName, ' ', LastName) LIKE '%"+ fname + "%' AND ";	
+		if(!(lname.equals("")) && lname != null)
 			end += "LastName=\""+lname+"\" AND ";
-		if(party!="" && party != null) {
+		if(!(party.equals("")) && party != null) {
 			beginning += ", Area.AreaName";
 			end += "PartyID=\""+party+"\" AND ";
 		}
-		if(area!="" && area != null) {
+		if(!(area.equals("")) && area != null) {
 			beginning += ", Party.PartyName";
 			end += "AreaID=\""+area+"\" AND ";
 		}
-		if(party=="" && area=="" && party != null && area != null){
+		if(party.equals("") && area.equals("") && party != null && area != null){
 			beginning += ", Area.AreaName";
 			beginning += ", Party.PartyName";
-
 		}
 		middle += "JOIN Party ON Person.PartyID = Party.Party_Id ";
 		middle += "JOIN Area ON Person.AreaID = Area.Area_Id ";
@@ -92,10 +91,10 @@ public class SearchServlet extends HttpServlet{
 			      Candidate candidate = new Candidate();
 			      candidate.setFName(rs.getString("FirstName"));
 			      candidate.setLName(rs.getString("LastName"));
-			      if(party == "" || party == null){
+			      if(party.equals("") || party == null){
 			    	  candidate.setParty(rs.getString("PartyName"));
 			      }
-			      if(area == "" || area == null){
+			      if(area.equals("") || area == null){
 			    	  candidate.setArea(rs.getString("AreaName"));
 			      }
 			      candidates.add(candidate);

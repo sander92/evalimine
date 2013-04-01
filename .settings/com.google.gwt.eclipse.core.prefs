@@ -1,11 +1,7 @@
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=branch 'master' of https\://github.com/sander92/evalimine.git
 eclipse.preferences.version=1
 entryPointModules=
-filesCopiedToWebInfLib=gwt-servlet.jar
+filesCopiedToWebInfLib=
 gwtCompileSettings=PGd3dC1jb21waWxlLXNldHRpbmdzPjxsb2ctbGV2ZWw+SU5GTzwvbG9nLWxldmVsPjxvdXRwdXQtc3R5bGU+T0JGVVNDQVRFRDwvb3V0cHV0LXN0eWxlPjxleHRyYS1hcmdzPjwhW0NEQVRBW11dPjwvZXh0cmEtYXJncz48dm0tYXJncz48IVtDREFUQVstWG14NTEybV1dPjwvdm0tYXJncz48ZW50cnktcG9pbnQtbW9kdWxlPmV2YWxpbWlzZWQuRXZhbGltaXNlZDwvZW50cnktcG9pbnQtbW9kdWxlPjwvZ3d0LWNvbXBpbGUtc2V0dGluZ3M+
-=======
-eclipse.preferences.version=1
-entryPointModules=
-filesCopiedToWebInfLib=gwt-servlet.jar
-gwtCompileSettings=PGd3dC1jb21waWxlLXNldHRpbmdzPjxsb2ctbGV2ZWw+SU5GTzwvbG9nLWxldmVsPjxvdXRwdXQtc3R5bGU+T0JGVVNDQVRFRDwvb3V0cHV0LXN0eWxlPjxleHRyYS1hcmdzPjwhW0NEQVRBW11dPjwvZXh0cmEtYXJncz48dm0tYXJncz48IVtDREFUQVstWG14NTEybV1dPjwvdm0tYXJncz48ZW50cnktcG9pbnQtbW9kdWxlPmV2YWxpbWlzZWQuRXZhbGltaXNlZDwvZW50cnktcG9pbnQtbW9kdWxlPjwvZ3d0LWNvbXBpbGUtc2V0dGluZ3M+
->>>>>>> branch 'master' of https://github.com/sander92/evalimine.git
