@@ -52,7 +52,7 @@ label
 }
 .tree li input + ol
 {
-	background: url(toggle-small-expand.png) 40px 0 no-repeat;
+	background: url(/images/toggle-small-expand.png) 40px 0 no-repeat;
 	margin: -0.938em 0 0 -44px;
 	height: 1em;
 }
@@ -66,7 +66,7 @@ label
 
 .tree li input:checked + ol
 {
-	background: url(toggle-small.png) 40px 5px no-repeat;
+	background: url(/images/toggle-small.png) 40px 5px no-repeat;
 	margin: -1.25em 0 0 -44px; 
 	padding: 1.563em 0 0 80px;
 	height: auto;

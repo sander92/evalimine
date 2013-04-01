@@ -12,7 +12,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
-public class KandidaatServlet extends HttpServlet{
+public class UserdataServlet extends HttpServlet{
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		Enumeration en = req.getParameterNames();
@@ -26,7 +26,8 @@ public class KandidaatServlet extends HttpServlet{
 	      DriverManager.registerDriver(new AppEngineDriver());
 	      c = DriverManager.getConnection("jdbc:google:rdbms://netivalimised2013:netivalimised/evalimised", "root", "");
 	      
-	      String voterID = req.getParameter("voter");
+	      String voterID = req.getParameter("voterID");
+	      System.out.println(voterID);
     	  String statement = createQuery(voterID);
     	  PreparedStatement stmt = c.prepareStatement(statement);
 	      ResultSet rs = stmt.executeQuery();

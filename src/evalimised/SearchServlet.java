@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
-public class EvalimisedServlet extends HttpServlet{
+public class SearchServlet extends HttpServlet{
 
 		
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

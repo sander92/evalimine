@@ -10,9 +10,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
-public class PoliitikuServlet extends HttpServlet{
+public class AutocompleteServlet extends HttpServlet{
 
 		
+	/**
+	 * enne kandidaatservlet
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
       String Name = req.getParameter("Name");
 	  Connection c = null;
