@@ -24,10 +24,13 @@ public class SearchServlet extends HttpServlet{
 	      DriverManager.registerDriver(new AppEngineDriver());
 	      c = DriverManager.getConnection("jdbc:google:rdbms://netivalimised2013:netivalimised/evalimised");
 	      String statement;
-	      if((fName == "" || fName == null) && (lName == "" || lName == null) && (party == "" || party == null) && (area == ""|| area == null)) {
-	    	  System.out.println("empty");
-	    	  statement = "SELECT Person.FirstName, Person.LastName, Party.PartyName, Area.AreaName FROM Person JOIN Party ON Person.PartyID = Party.Party_Id JOIN Area ON Person.AreaID = Area.Area_Id";
-	      }else
+	      if((fName == "" || fName == null) && (lName == "" || lName == null) && 
+	    		  (party == "" || party == null) && (area == ""|| area == null)) {
+	    	  System.out.println("Getting all candidates");
+	    	  statement = "SELECT Person.FirstName, Person.LastName, Party.PartyName, Area.AreaName " +
+	    	  		"FROM Person JOIN Party ON Person.PartyID = Party.Party_Id JOIN Area ON Person.AreaID = Area.Area_Id";
+	      }
+	      else
 	    	  statement = createQuery(fName,lName,party, area);
     	  PreparedStatement stmt = c.prepareStatement(statement);
 	      ResultSet rs = stmt.executeQuery();

@@ -30,9 +30,9 @@
 				<div id="left">
 					<p>Vaata kes on kõige rohkem hääli saanud ja andnud</p>
 					<form>
-						<input type="radio" name="liik" value="partei" onClick="waiter()">Parteid &emsp;&emsp;
-						<input type="radio" name="liik" value="piirkond" onClick="waiter()">Piirkonnad &emsp;&emsp;
-						<input type="radio" name="liik" value="kandidaat" onClick="waiter()">Kandidaadid
+						<input type="radio" name="statType" value="party" onClick="getStat('party')" onmouseup="waiter()">Parteid &emsp;&emsp;
+						<input type="radio" name="statType" value="region" onClick="getStat('region')" onmouseup="waiter()"">Piirkonnad &emsp;&emsp;
+						<input type="radio" name="statType" value="candidate" onClick="getStat('candidate')" onmouseup="waiter()"">Kandidaadid
 					</form>
 					<img alt="Kaart" src="/images/kaart.png" id="kaart">
 				</div>
