@@ -30,10 +30,8 @@ public class LisaendServlet extends HttpServlet{
     	  String statement = createQuery(fName,lName,party, area);
     	  PreparedStatement stmt = c.prepareStatement(statement);
 	      stmt.executeUpdate();
-	      out.print("Olete lisatud");
 	      out.write("Olete süsteemi kirjutatud");
 
-	      System.out.println("Olete lisatud systeemi");
 	    } 
 	    catch (SQLException e) {
 	        e.printStackTrace();
