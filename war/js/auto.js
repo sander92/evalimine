@@ -1,29 +1,59 @@
-var names=["Magdalena Malejeva","Eduard Ekskavaator","Filbert Hollins","Ulrich Van Andringa"];
-var k=0;
-function autoc() {
-	if(k==0){
-		getLData();
-		k=1;
-	}
 
-	//if(vahenames!=null){
-		//names = vahenames;
-	//}
-									   //!!!    !!!!     !!!!!!!!     !!!!!!!!!
-	$("#name")						///teha kuidagi nii, et see võtaks ajaxist neid
-			.autocomplete(
-					{
-						source : function(request, response) {
-							var matcher = new RegExp("^"
-									+ $.ui.autocomplete
-											.escapeRegex(request.term), "i");
-							response($.grep(names, function(item) {
-								return matcher.test(item);
-							}));
-						},
-						minLength: 2
-					});
+function getLData() {
+	var myVarmuu=setInterval(function(){
+		
+		if($("#name").val().length>1){
+			$('*').css('cursor','wait');
+			autoc();
+			clearTimeout(myVarmuu);
+		}
+		if($("#name").val().length<2){
+			$('*').css('cursor','default');
+			
+		}
+		
+		
+	},500);
+	
 }
-$("#name").onfocus=autoc;
-$("#name").onblur=autoc;
+
+function autoc() {
+
+
+	$( "#name" ).autocomplete({
+	      source: function( request, response ) {
+	        $.ajax({
+	        	type : 'GET',
+	          url: "/AutocompleteServlet",
+	          dataType: "json",
+	          data: {
+	            "Name": request.term
+	          },
+	          success: function( data ) {
+	        		$('*').css('cursor','default');
+
+	            response( $.map( data, function( item ) {
+	              return {
+	                label: item.firstName,
+	                value: item.firstName
+
+	              }
+	            }));
+	          },
+	          error : function(xhr, ajaxOptions, thrownError) {
+					$('*').css('cursor','default');
+					alert(thrownError);
+				}
+	        });
+	      },
+	      minLength: 2,
+	      select: function( event, ui ) {
+	          $( "#name" ).text(ui.item.label);
+	        }
+	      
+	    
+	  });
+}
+$("#name").onfocus=getLData();
+/*$("#name").onblur=autoc;*/
 

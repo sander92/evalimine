@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
-public class AutocompleteServlet extends HttpServlet{
+public class KandidaadileheServlet extends HttpServlet{
 
 		
 	/**
