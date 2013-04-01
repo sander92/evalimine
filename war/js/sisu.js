@@ -12,17 +12,8 @@ function sisu(nimi) {
 		});
 	} else {
 		$("#peasisu").load(nimi + ".html #sisu", function() {
-<<<<<<< HEAD
 			tableSorter();
 			//getLData();
-
-||||||| merged common ancestors
-			hider();
-			//getLData();
-
-=======
-			hider();
->>>>>>> origin/br
 			autoc();
 		});
 
