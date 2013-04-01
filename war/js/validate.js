@@ -3,9 +3,8 @@ $(document).ready(function(){
 	hideWarnings();
 	$("#submit").click(function() {
 		voiblisada=validateForm();
-		if (voiblisada){
-			alert("Tere tulemast valimisnimekirja");
-			window.close();
+		if (voiblisada==true){
+			$("#lisaKandidaadiks").submit();
 		}
 	}); 
 

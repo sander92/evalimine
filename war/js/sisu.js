@@ -11,8 +11,6 @@ function sisu(nimi) {
 	} else {
 		$("#peasisu").load(nimi + ".html #sisu", function() {
 			hider();
-			//getLData();
-
 			autoc();
 		});
 
