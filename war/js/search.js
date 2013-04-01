@@ -40,7 +40,7 @@ function createTable(candidates, givenParty, givenRegion) {
 
 	for (i in candidates) {
 		//get values from json data
-		name = candidates[i]['firstName'] + " " + candidates[i]['lastName'];
+		name = candidates[i]['name'];
 		if (givenParty == '')
 			party = candidates[i]['party'];
 		else

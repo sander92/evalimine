@@ -21,7 +21,7 @@ public class StatisticsServlet extends HttpServlet{
 	      DriverManager.registerDriver(new AppEngineDriver());
 	      c = DriverManager.getConnection("jdbc:google:rdbms://netivalimised2013:netivalimised/evalimised");
 
-	      if(option!= null || option != "") {
+	      if(option != null || option != "") {
 	    	  String statement = createQuery(option);
 	    	  PreparedStatement stmt = c.prepareStatement(statement);
 		      ResultSet rs = stmt.executeQuery();
@@ -46,17 +46,20 @@ public class StatisticsServlet extends HttpServlet{
 	
 	private static String createQuery(String option) {
 		String query = "";
-		int i;
-		if(option == "region")
-			query ="SELECT Area.AreaName, COUNT(Vote.Vote_Id) FROM Vote " +
+		if(option.equals("region")){	
+			query ="SELECT Area.AreaName, COUNT(Vote.Vote_Id) AS Votes FROM Vote " +
 					"JOIN Person ON Vote.PersonID = Person.Person_Id JOIN Area ON Person.AreaID=Area.Area_Id GROUP BY AreaID";
-		else if(option == "party")
-			query ="SELECT Party.PartyName, COUNT(Vote.Vote_Id) FROM Vote " +
+		}
+		else if(option.equals("party")){
+			query ="SELECT Party.PartyName, COUNT(Vote.Vote_Id) AS Votes FROM Vote " +
 					"JOIN Person ON Vote.PersonID = Person.Person_Id JOIN Party ON Person.PartyID=Party.Party_Id GROUP BY PartyID";
-		else if(option == "candidate")
-			query = "SELECT Person.FirstName, Person.LastName, Area.AreaName, Party.PartyName, COUNT(Vote.Vote_Id) FROM Vote " +
+		}
+		else if(option.equals("candidate")){
+			query = "SELECT Person.FirstName, Person.LastName, Area.AreaName, Party.PartyName, COUNT(Vote.Vote_Id) AS Votes FROM Vote " +
 					"JOIN Person ON Vote.PersonID = Person.Person_Id JOIN Party ON Person.PartyID=Party.Party_Id " +
 					"JOIN Area ON Person.AreaID=Area.Area_Id GROUP BY PersonID";	
+		}
+		System.out.println(query);
 		return query;
 	}
 	
@@ -65,6 +68,18 @@ public class StatisticsServlet extends HttpServlet{
 	      try {
 			while(rs.next()){
 			      VoteData element = new VoteData();
+			      if(option.equals("party")){
+			    	  element.setParty(rs.getString("PartyName"));
+			      }
+			      else if(option.equals("region")){
+			    	  element.setRegion(rs.getString("AreaName"));
+			      }
+			      else if(option.equals("candidate")){
+			    	  element.setName(rs.getString("FirstName") + " " + rs.getString("LastName"));
+			    	  element.setParty(rs.getString("PartyName"));
+			    	  element.setRegion(rs.getString("AreaName"));
+			      }
+			      element.setVotes(rs.getInt("Votes"));
 			      data.add(element);
 			  }
 		} catch (SQLException e) {
