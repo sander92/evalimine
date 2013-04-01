@@ -5,9 +5,9 @@ function setData(d){
 
 function getData(){
 	var myVarD=setInterval(function(){
-		if(data!=null){
-			$("#VotedFor").innerHTML="Kodanik x";//panna waiter ka
-			data="Kodanik x";
+		if(data!="Pole h‰‰letanud"){
+			$("#VotedFor")[0].innerHTML="Kodanik x";//panna waiter ka
+			//data="Kodanik x";//tuleks tegelt ajaksist
 			clearTimeout(myVarD);
 			alert("VoteData: "+data.toString());
 			//return ldata;
@@ -16,7 +16,8 @@ function getData(){
 
 setTimeout(function(){
 	clearTimeout(myVarD);
-	alert("h‰‰‰letamine timeouti sees");
+	$("#VotedFor")[0].innerHTML="H‰‰letusandmed ei ole saadaval";
+	alert("minu andmed timeouti sees");
 	
 },5000);
 	
@@ -47,6 +48,5 @@ function getVoted(voterID){
 function getVFor(voterID){
 	getVoted(voterID);
 	getData();
-	$("#VotedFor").innerHTML=data;
 }
 

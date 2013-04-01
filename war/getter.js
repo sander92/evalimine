@@ -3,24 +3,30 @@ function setLData(d){
 	ldata=d;
 }
 
-
 function getLData(){
+	var myVarmuu=setInterval(function(){
+		if($("#name").val().length>1){
+			clearTimeout(myVarmuu);
+			getTrueData();
+		}
+	},500);
+}
+function getTrueData(){
 	getList();
 	var myVar=setInterval(function(){
-			if(ldata!=null){
-				names=["Mari","Jüri"];
-				autoc();
-				clearTimeout(myVar);
-				alert(ldata.toString());
-				//return ldata;
-			}
-		},500)
+		if(ldata!=null){
+			
+			clearTimeout(myVar);
+			alert(ldata.toString());
+			//return ldata;
+		}
+	},500);
+
+setTimeout(function(){
+	clearTimeout(myVar);
+	alert("listdata timeouti sees");
 	
-	setTimeout(function(){
-		clearTimeout(myVar);
-		alert("listdata timeouti sees");
-		
-	},5000);
+},15000);
 }
 
 function getList() {
@@ -30,7 +36,6 @@ function getList() {
 		catch (e) {
 			flName="Ma";
 		}
-		alert(flName.toString());
 
 
 		if (flName != "") {

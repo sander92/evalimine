@@ -1,7 +1,11 @@
 var names=["Magdalena Malejeva","Eduard Ekskavaator","Filbert Hollins","Ulrich Van Andringa"];
-getLData();
+var k=0;
 function autoc() {
-	
+	if(k==0){
+		getLData();
+		k=1;
+	}
+
 	//if(vahenames!=null){
 		//names = vahenames;
 	//}
