@@ -16,7 +16,7 @@ function getData(){
 
 setTimeout(function(){
 	clearTimeout(myVarD);
-	$("#VotedFor")[0].innerHTML="H‰‰letusandmed ei ole saadaval";
+	$("#VotedFor")[0].innerHTML="H‰‰letusandmeid ei ole saadaval";
 	alert("minu andmed timeouti sees");
 	
 },5000);
