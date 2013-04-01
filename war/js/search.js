@@ -84,4 +84,6 @@ function getCandidateInfo(candidate) {
 	$('#personInfo').text(candidate.person.name);
 }
 
-
+function klikiNimel(){
+	window.location.href="lisakandidaadiks.html";
+}
