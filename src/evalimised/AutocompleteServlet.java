@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
-public class KandidaadileheServlet extends HttpServlet{
+public class AutocompleteServlet extends HttpServlet{
 
 		
 	/**
@@ -51,7 +51,6 @@ public class KandidaadileheServlet extends HttpServlet{
 	
 	private static String createQuery(String nimi) {
 		String beginning = "SELECT CONCAT_WS(' ',firstname, lastname) as nimi FROM Person where FirstName LIKE ";
-		
 		String end="'"+nimi+"%'";
 		String query = beginning + end;
 		System.out.println(query);

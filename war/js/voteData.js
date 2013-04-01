@@ -10,7 +10,7 @@ function getVoted(voterID){
 				dataType : 'json',
 				success : function(data) {
 					data=data[0];
-					$("#VotedFor")[0].innerHTML="Sina andsid oma h√§√§le j√§rgmisele isikule:<br>Poliitiku nimi: "+data.firstName+" "+data.lastName+"<br>"+"Erakond: "+data.party+"<br>"+"Piirkond: "+data.area;
+					$("#VotedFor")[0].innerHTML="Sina andsid oma h‰‰le j‰rgmisele isikule:<br>Poliitiku nimi: "+data.firstName+" "+data.lastName+"<br>"+"Erakond: "+data.party+"<br>"+"Piirkond: "+data.area;
 					$('*').css('cursor','default');
 
 				},
