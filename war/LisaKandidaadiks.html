@@ -9,11 +9,11 @@
 <body class= "Popup">
 <!--  p>Siin saate end kandidaadiks lisada</p>-->
 
-<form class="vorm" id="lisaKandidaadiks" name="lisaKandidaadiks">
-	<p>Eesnimi: <input type="text" id="firstName"> <label class ="warning" id="fNameValidate">Eesnimi peab olema sisestatud!</label></p>
-	<p>Perenimi: <input type="text" id="lastName"> <label class ="warning" id="lNameValidate">Perekonnanimi peab olema sisestatud!</label></p>
+<form action="/LisaendServlet" method="post" class="vorm" id="lisaKandidaadiks">
+	<p>Eesnimi: <input type="text" id="firstName" name="fName"> <label class ="warning" id="fNameValidate">Eesnimi peab olema sisestatud!</label></p>
+	<p>Perenimi: <input type="text" id="lastName" name="lName"> <label class ="warning" id="lNameValidate">Perekonnanimi peab olema sisestatud!</label></p>
 	<p>Piirkond:
-		<select id="regionSelector">
+		<select id="regionSelector" name="area">
 		<option selected="selected"></option>
 		<option>Harjumaa</option>
 		<option>Tartumaa</option>
@@ -22,7 +22,7 @@
 		<label class ="warning" id="regionValidate">Piirkond peab olema valitud!</label></p>
 	</p>
 	<p>Erakond: 
-		<select id="partySelector">
+		<select id="partySelector" name="party">
 		<option selected="selected"></option>
 		<option>Keskerakond</option>
 		<option>Reformierakond</option>
@@ -31,7 +31,8 @@
 		<label class ="warning" id="partyValidate">Erakond peab olema valitud!</label>
 	</p>
 	</p>
-	<button type="button" id="submit">Lisa end kandidaadiks</button>	
 </form>
+	<button id="submit" type="button">Lisa end kandidaadiks</button>	
+
 </body>
 </html>

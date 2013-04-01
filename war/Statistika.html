@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,4 +78,170 @@
 
 
 </body>
+||||||| merged common ancestors
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" type="text/css" href="Stiil.css" media="screen"> 
+	<link rel="stylesheet" type="text/css" href="Statistika.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="print.css" media="print">
+	<script type="text/javascript" src="/js/jquery-latest.js"></script>
+	<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="/js/myTablesorter.js"></script>
+	<script type="text/javascript" src="/js/progress.js"></script>
+	<script type="text/javascript" src="/js/menu.js"></script>
+	<script type="text/javascript" src="/js/sisu.js"></script>
+	
+<title>E-Valimised: statistika</title>
+</head>
+
+<body class="Statistika">
+		<p id="kaitse">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
+
+	<div id="container">
+		<div id="tiitel">
+			<h1><a href=Evalimised.html>E-VALIMISED</a></h1>
+		</div>
+		<div id="navibar">
+			
+		</div>
+		<div id="peasisu">
+			<div id="sisu">
+				<div id="left">
+					<p>Vaata kes on kõige rohkem hääli saanud ja andnud</p>
+					<form>
+						<input type="radio" name="liik" value="partei" onClick="waiter()">Parteid &emsp;&emsp;
+						<input type="radio" name="liik" value="piirkond" onClick="waiter()">Piirkonnad &emsp;&emsp;
+						<input type="radio" name="liik" value="kandidaat" onClick="waiter()">Kandidaadid
+					</form>
+					<img alt="Kaart" src="/images/kaart.png" id="kaart">
+				</div>
+				<div id="right" >
+					<a href="#" onclick="window.print()" class="printer">Prindi</a><br>
+					<table border="1" class="pea" id="tabel" onclick="fun()">
+						<thead>
+							<tr>
+								<th>Piirkond</th>
+								<th>Hääli</th>
+								<th>Erakond</th>
+								<th>Populaarseim kandidaat</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Harjumaa</td>
+								<td>10052</td>
+								<td>Keskerakond</td>
+								<td>Edgar</td>
+							</tr>
+							<tr>
+								<td>Tartumaa</td>
+								<td>5123</td>
+								<td>Reformierakond</td>
+								<td>Peeter</td>
+							</tr>
+							<tr>
+								<td>Saaremaa</td>
+								<td>1512</td>
+								<td>Rohelised</td>
+								<td>Peeter</td>
+							</tr>	
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>	
+		<div id="footer">
+			<p><a href=Kontakt.html>Kontakt</a></p>
+		</div>
+		<p id="kaitse">Rakenduses realiseeritud e-valimiste näide on realiseeritud tehnoloogiate praktiseerimise eesmärgil ning ei ole mõeldud reaalsete e-valimiste korraldamiseks.</p>
+		<p id="kaitse">Kokkulangevused reaalse e-valimiste protsessiga on juhuslikud</p>
+
+	</div>
+
+
+</body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" type="text/css" href="Stiil.css" media="screen"> 
+	<link rel="stylesheet" type="text/css" href="Statistika.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="print.css" media="print">
+	<script type="text/javascript" src="/js/jquery-latest.js"></script>
+	<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="/js/progress.js"></script>
+	<script type="text/javascript" src="/js/menu.js"></script>
+	<script type="text/javascript" src="/js/sisu.js"></script>
+	
+<title>E-Valimised: statistika</title>
+</head>
+
+<body class="Statistika">
+		<p id="kaitse">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
+
+	<div id="container">
+		<div id="tiitel">
+			<h1><a href=Evalimised.html>E-VALIMISED</a></h1>
+		</div>
+		<div id="navibar">
+			
+		</div>
+		<div id="peasisu">
+			<div id="sisu">
+				<div id="left">
+					<p>Vaata kes on kõige rohkem hääli saanud ja andnud</p>
+					<form>
+						<input type="radio" name="statType" value="party" onClick="getStat('party')" onmouseup="waiter()">Parteid &emsp;&emsp;
+						<input type="radio" name="statType" value="region" onClick="getStat('region')" onmouseup="waiter()"">Piirkonnad &emsp;&emsp;
+						<input type="radio" name="statType" value="candidate" onClick="getStat('candidate')" onmouseup="waiter()"">Kandidaadid
+					</form>
+					<img alt="Kaart" src="/images/kaart.png" id="kaart">
+				</div>
+				<div id="right" >
+					<a href="#" onclick="window.print()" class="printer">Prindi</a><br>
+					<table border="1" class="pea" id="tabel" onclick="fun()">
+						<thead>
+							<tr>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Harjumaa</td>
+								<td>10052</td>
+								<td>Keskerakond</td>
+								<td>Edgar</td>
+							</tr>
+							<tr>
+								<td>Tartumaa</td>
+								<td>5123</td>
+								<td>Reformierakond</td>
+								<td>Peeter</td>
+							</tr>
+							<tr>
+								<td>Saaremaa</td>
+								<td>1512</td>
+								<td>Rohelised</td>
+								<td>Peeter</td>
+							</tr>	
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>	
+		<div id="footer">
+			<p><a href=Kontakt.html>Kontakt</a></p>
+		</div>
+		<p id="kaitse">Rakenduses realiseeritud e-valimiste näide on realiseeritud tehnoloogiate praktiseerimise eesmärgil ning ei ole mõeldud reaalsete e-valimiste korraldamiseks.</p>
+		<p id="kaitse">Kokkulangevused reaalse e-valimiste protsessiga on juhuslikud</p>
+
+	</div>
+
+
+</body>
+>>>>>>> origin/br
 </html>
