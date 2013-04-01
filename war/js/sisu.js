@@ -6,11 +6,13 @@ function sisu(nimi) {
 
 	if (nimi != "Kandidaadid") {
 		$("#peasisu").load(nimi + ".html #sisu", function() {
+			if(nimi=="Statistika")
+				tableSorter();
 			hidesees();
 		});
 	} else {
 		$("#peasisu").load(nimi + ".html #sisu", function() {
-			hider();
+			tableSorter();
 			//getLData();
 
 			autoc();

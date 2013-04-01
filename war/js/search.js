@@ -1,10 +1,4 @@
 function otsimine() {
-
-	$("#tabel").tablesorter();
-	$('#tabel').hide();
-
-	$("#otsi").click(function() {
-
 		var fName = $("#name").attr("value");
 		//var lName = $("#lastname").attr("value");
 		var partyCode = $("#partyselector").val();
@@ -31,9 +25,6 @@ function otsimine() {
 				}
 			});
 		}
-
-	});
-
 	$('#showInfo').click(function() {
 		$.getJSON("json/candidate.json", function(data) {
 			getCandidateInfo(data);
@@ -93,7 +84,3 @@ function otsimine() {
 	}
 }
 
-function hider() {
-	$('#tabel').hide();
-
-}
