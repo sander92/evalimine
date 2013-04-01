@@ -1,5 +1,5 @@
 function otsimine() {
-		var fName = $("#name").attr("value");
+		var fName = $("#name").val();
 		//var lName = $("#lastname").attr("value");
 		var partyCode = $("#partyselector").val();
 		var regionCode = $("#regionselector").val();
@@ -40,7 +40,7 @@ function createTable(candidates, givenParty, givenRegion) {
 
 	for (i in candidates) {
 		//get values from json data
-		name = candidates[i]['name'];
+		name = candidates[i]['firstName'] + ' ' + candidates[i]['lastName'];
 		if (givenParty == '')
 			party = candidates[i]['party'];
 		else
