@@ -1,4 +1,4 @@
-var data;
+var data=null;
 function setData(d){
 	data=d;
 }
@@ -7,9 +7,9 @@ function getVoted(voterID){
 	$.ajax({
 				type : 'GET',
 				//url : 'json/findCandidatesByPartyAndRegion.json',
-				url: '/Kandidaat',
+				url: '/AndmedServlet',
 				 data: { 
-        		 "voter": voterID // <-- the $ sign in the parameter name seems unusual, I would avoid it
+        		 "voterID": voterID // <-- the $ sign in the parameter name seems unusual, I would avoid it
    				},
 				dataType : 'json',
 				success : function(data) {

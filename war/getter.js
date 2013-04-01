@@ -1,10 +1,11 @@
 var ldata;
-function setData(d){
+function setLData(d){
 	ldata=d;
 }
 
 function getData(){
-	alert(data);
+	getList();
+	alert(ldata);
 	return ldata;
 }
 
@@ -15,7 +16,7 @@ function getList() {
 		catch (e) {
 			flName="Ma";
 		}
-		
+		alert(flName);
 
 
 		if (flName != "") {
@@ -26,14 +27,14 @@ function getList() {
 			$.ajax({
 				type : 'GET',
 				//url : 'json/findCandidatesByPartyAndRegion.json',
-				url: '/Poliitik',
+				url: '/KandidaadileheServlet',
 				 data: { 
         		 "Name": flName// <-- the $ sign in the parameter name seems unusual, I would avoid it
    				},
 				dataType : 'json',
 				success : function(data) {
-					setData(data);
-					alert(data);
+					setLData(data);
+					
 					//var candidates = data['candidates']
 					//createTable(candidates, party, region);
 				},

@@ -1,9 +1,9 @@
 var names=["Magdalena Malejeva","Eduard Ekskavaator","Filbert Hollins","Ulrich Van Andringa"];
 function autoc() {
 	vahenames=getData();
-	if(vahenames!=null){
+	//if(vahenames!=null){
 		names = vahenames;
-	}
+	//}
 	
 	$("#name")
 			.autocomplete(

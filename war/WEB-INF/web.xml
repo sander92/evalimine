@@ -11,22 +11,22 @@
     
     
      <servlet>
-        <servlet-name>Kandidaat</servlet-name>
-        <servlet-class>evalimised.KandidaatServlet</servlet-class>
+        <servlet-name>AndmedServlet</servlet-name>
+        <servlet-class>evalimised.AndmedServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Kandidaat</servlet-name>
-        <url-pattern>/Kandidaat</url-pattern>
+        <servlet-name>AndmedServlet</servlet-name>
+        <url-pattern>/AndmedServlet</url-pattern>
     </servlet-mapping>
     
     
      <servlet>
-        <servlet-name>Poliitik</servlet-name>
-        <servlet-class>evalimised.PoliitikuServlet</servlet-class>
+        <servlet-name>KandidaadileheServlet</servlet-name>
+        <servlet-class>evalimised.KandidaadileheServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Poliitik</servlet-name>
-        <url-pattern>/Poliitik</url-pattern>
+        <servlet-name>KandidaadileheServlet</servlet-name>
+        <url-pattern>/KandidaadileheServlet</url-pattern>
     </servlet-mapping>
     
     
