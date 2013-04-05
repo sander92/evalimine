@@ -52,11 +52,18 @@ function createTable(candidates, givenParty, givenRegion) {
 		
 		//create new row with data
 		var cols = new Array();
-		kandidaadinimi="klikinime('"+name+"')"; //"alert('"+name+"')";
-		cols[0] = $("<td></td>").text(name).attr("onClick",kandidaadinimi);
-		cols[1] = $("<td></td>").text(region);
-		cols[2] = $("<td></td>").text(party);
-		var row = $("<tr></tr>");
+		
+//		kandidaadinimi="klikinime('"+name+"')";
+//		kandidaadilinn="klikinime('"+region+"')";
+//		kandidaadipartei="klikinime('"+party+"')";
+		kandidaadiInfo="klikinime('"+name+"','"+region+"','"+party+"')";
+		//asi="klikinime('"+name+"')";
+		
+		cols[0] = $("<td></td>").text(name).attr("onClick",kandidaadiInfo);
+		cols[1] = $("<td></td>").text(region).attr("onClick",kandidaadiInfo);
+		cols[2] = $("<td></td>").text(party).attr("onClick",kandidaadiInfo);
+		var row = $("<tr></tr>");//.attr("onClick",kandidaadiInfo);
+		//$("td").click(function(){klikinime(kandidaadinimi,kandidaadilinn,kandidaadipartei);});
 
 		
 		for (j in cols)
@@ -64,9 +71,9 @@ function createTable(candidates, givenParty, givenRegion) {
 		//append data to table
 		row.addClass("candidateClickable");
 		$("#tabel tbody").append(row);
-		
+		//$(".candidateClickable").click(klikinime(name,region,party));
+		//row.attr("onClick", klikinime(name,region,party));
 	}
-
 	//display table and apply tablesorter
 	if ($("#tabel tbody tr").size() > 0) {
 		$('#tabel').show();

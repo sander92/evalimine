@@ -52,15 +52,18 @@
 								<option value="REF">Reformierakond</option>
 								<option value="ROH">Rohelised</option>
 								</select>
-						</div><br>					
+						</div>			
 				</form>
-					<button id="otsi" onClick="otsimine()" onmouseup="waiter()">Otsi kandidaati</button>		
-					<p>
-					<button id="showInfo" onClick="otsimine()" onmouseup="waiter()">Näita kandidaadi infot</button><br>
-					<b>Nimi:</b> <label id = "personInfo"></label><br>
-					<b>Erakond:</b> <label id = "partyInfo"></label><br>
-					<b>Piirkond:</b> <label id = "regionInfo"></label><br>
-					</p>
+					<div id ="kandidaadivaade">
+						<button id="otsi" onClick="otsimine()" onmouseup="waiter()">Otsi kandidaati</button>		
+						<p>
+						<b>Nimi:</b> <label id = "personInfo"></label><br>
+						<b>Erakond:</b> <label id = "partyInfo"></label><br>
+						<b>Piirkond:</b> <label id = "regionInfo"></label><br>
+						<button onmouseup="waiter()">Kinnita</button>
+						<button onmouseup="waiter()">Tühista</button>
+						</p>
+					</div>
 				</div>
 				
 	

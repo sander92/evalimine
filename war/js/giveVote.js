@@ -1,23 +1,6 @@
-function klikinime(a_name){
-
-	createPopup('kinnitusleht.html');
-	//$("#nimi")[0].text(a_name);
-	nimi=this.a_name;
-	//$(document).ready(function(){
-//		document.getElementById("nimi").innerHTML=nimi;
-		$("#nimi").text(nimi);
-	//});
-}
-
-//document.getElementById("nimi").innerHTML=nimi;
-//$("#nimi").text(nimi);
-//
-//function paneNimi()
-//{
-//	document.getElementById("nimi").innerHTML=nimi;
-//}
-
-function funtime()
-{
-	document.getElementById("nimi").innerHTML=nimi;
+function klikinime(a_name,a_region,a_party){
+	document.getElementById("kandidaadivaade").style.visibility="visible";
+	document.getElementById("personInfo").innerHTML=a_name;
+	document.getElementById("regionInfo").innerHTML=a_region;
+	document.getElementById("partyInfo").innerHTML=a_party;
 }

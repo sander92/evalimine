@@ -11,3 +11,8 @@
 #otsi:ACTIVE {
 	cursor: wait;
 }
+
+#kandidaadivaade
+{
+	display:hidden;
+}
