@@ -52,15 +52,19 @@ function createTable(candidates, givenParty, givenRegion) {
 		
 		//create new row with data
 		var cols = new Array();
-		cols[0] = $("<td></td>").text(name);
+		kandidaadinimi="klikinime('"+name+"')"; //"alert('"+name+"')";
+		cols[0] = $("<td></td>").text(name).attr("onClick",kandidaadinimi);
 		cols[1] = $("<td></td>").text(region);
 		cols[2] = $("<td></td>").text(party);
 		var row = $("<tr></tr>");
+
+		
 		for (j in cols)
 			row.append(cols[j]);
 		//append data to table
 		row.addClass("candidateClickable");
 		$("#tabel tbody").append(row);
+		
 	}
 
 	//display table and apply tablesorter
@@ -68,7 +72,7 @@ function createTable(candidates, givenParty, givenRegion) {
 		$('#tabel').show();
 		$("#tabel").trigger("clearCache");
 		// let the plugin know that we made a update 
-		$("table").trigger("update");
+		$("#table").trigger("update");
 		// set sorting column and direction, this will sort on the first column 
 		//var sorting = [[0,0]]; 
 		// sort on the first column 
@@ -83,8 +87,3 @@ function getCandidateInfo(candidate) {
 	$('#regionInfo').text(candidate.region.name);
 	$('#personInfo').text(candidate.person.name);
 }
-
-function klikiNimel(){
-	window.location.href="lisakandidaadiks.html";
-}
-

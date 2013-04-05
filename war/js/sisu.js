@@ -14,7 +14,12 @@ function sisu(nimi) {
 		$("#peasisu").load(nimi + ".html #sisu", function() {
 			tableSorter();
 			//getLData();
+			
 			autoc();
+			
+			$(".candidateClickable td").click(function(){
+				alert('tfhg');
+			});	
 		});
 
 	}

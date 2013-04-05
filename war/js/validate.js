@@ -5,6 +5,7 @@ $(document).ready(function(){
 		voiblisada=validateForm();
 		if (voiblisada==true){
 			$("#lisaKandidaadiks").submit();
+			$("#name").submit();
 		}
 	}); 
 
