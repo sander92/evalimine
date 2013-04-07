@@ -41,7 +41,6 @@ public class LisaendServlet extends HttpServlet{
 
 	      
 
-
 		out.print("	Olete andmebaasi lisatud<br>Tere uus poliitik!");
 
 		out.print("</body></html>");

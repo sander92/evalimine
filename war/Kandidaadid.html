@@ -51,6 +51,8 @@
 								<option value="KES">Keskerakond</option>
 								<option value="REF">Reformierakond</option>
 								<option value="ROH">Rohelised</option>
+								<option value="SDE">Sotsiaaldemokraadid</option>
+								
 								</select>
 						</div>			
 				</form>
@@ -60,9 +62,14 @@
 						<b>Nimi:</b> <label id = "personInfo"></label><br>
 						<b>Erakond:</b> <label id = "partyInfo"></label><br>
 						<b>Piirkond:</b> <label id = "regionInfo"></label><br>
-						<button onmouseup="waiter()">Kinnita</button>
-						<button onmouseup="waiter()">Tühista</button>
 						</p>
+						
+						<div id="sees">
+							<div id="seeshaal">
+								<button onClick="kinnita()" onmouseup="waiter()">Anna hääl</button>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 				

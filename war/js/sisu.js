@@ -1,5 +1,5 @@
 var loggedin = false;
-
+var voterID;
 function sisu(nimi) {
 
 	$("body").attr("class", nimi);
@@ -16,7 +16,8 @@ function sisu(nimi) {
 			//getLData();
 			
 			autoc();
-			
+			hidesees();
+			$("#seeshaal").hide();
 			$(".candidateClickable td").click(function(){
 				alert('tfhg');
 			});	
@@ -62,10 +63,12 @@ function hidesees() {
 		// $("sees").hide();
 		// $("nupp").hide();
 		$("#sees").hide();
+		voterID=0;
 	}
 
 	else if (loggedin == true) {
 		$("#sees").show();
+		voterID=38210032311;
 	}
 }
 
