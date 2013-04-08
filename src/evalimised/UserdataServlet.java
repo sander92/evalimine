@@ -88,7 +88,7 @@ public class UserdataServlet extends HttpServlet{
 	  }
 	
 	private static String createQuery(String voterID) {
-		String kogu="select FirstName,LastName,PartyName,AreaName from Person inner join Party,Area where Area.Area_Id=Person.AreaID and Person.PartyID=Party_Id and Person_Id=( SELECT votedForID from users where UserName="+voterID+")";
+		String kogu="select FirstName,LastName,PartyName,AreaName from Person inner join Party,Area where Area.Area_Id=Person.AreaID and Person.PartyID=Party_Id and Person_Id=(select PersonID from Vote where voterID="+voterID+")";
 		
 		String query = kogu;
 		System.out.println(query);
