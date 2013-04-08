@@ -25,16 +25,42 @@ public class UserdataServlet extends HttpServlet{
 	      String voterID = req.getParameter("voterID");
 	      System.out.println(voterID);
     	  String statement = createQuery(voterID);
-    	  PreparedStatement stmt = c.prepareStatement(statement);
+    	  PreparedStatement stmt = c.prepareStatement(statement,
+    			    ResultSet.TYPE_SCROLL_INSENSITIVE, 
+    			    ResultSet.CONCUR_READ_ONLY);
 	      ResultSet rs = stmt.executeQuery();
-	      List<Candidate> candidates = new ArrayList<Candidate>();
-	      while(rs.next()){
-                Candidate candidate = new Candidate();
-                candidate.setFName(rs.getString("FirstName"));
-                candidate.setLName(rs.getString("LastName"));
-                candidate.setParty(rs.getString("PartyName"));
-                candidate.setArea(rs.getString("AreaName"));
-                candidates.add(candidate);
+	      
+	      rs.last();
+	      int size = rs.getRow();
+	      rs.beforeFirst();
+	      
+	      if(size>0){
+	    	  List<Candidate> candidates = new ArrayList<Candidate>();
+		      while(rs.next()){
+	                Candidate candidate = new Candidate();
+	                candidate.setFName(rs.getString("FirstName"));
+	                candidate.setLName(rs.getString("LastName"));
+	                candidate.setParty(rs.getString("PartyName"));
+	                candidate.setArea(rs.getString("AreaName"));
+	                candidates.add(candidate);
+		      
+
+			      Gson gson = new GsonBuilder().create();
+		          String categoriesJson = gson.toJson(candidates);
+		          resp.setContentType("application/json");
+		          resp.setCharacterEncoding("UTF-8");
+		          resp.getWriter().write(categoriesJson);
+		      }  
+	      }
+	      else{
+	    	  List<Candidate> candidates = new ArrayList<Candidate>();
+
+	    	  Candidate candidate = new Candidate();
+              candidate.setFName("null");
+              candidate.setLName("null");
+              candidate.setParty("null");
+              candidate.setArea("null");
+              candidates.add(candidate);
 	      
 
 		      Gson gson = new GsonBuilder().create();
@@ -42,10 +68,13 @@ public class UserdataServlet extends HttpServlet{
 	          resp.setContentType("application/json");
 	          resp.setCharacterEncoding("UTF-8");
 	          resp.getWriter().write(categoriesJson);
+
 	      }
+	      
 	    } 
 	    catch (SQLException e) {
 	        e.printStackTrace();
+	        resp.getWriter().write("error");
 	    } 
 	    finally {
 	        if (c != null){

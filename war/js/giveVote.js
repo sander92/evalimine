@@ -31,10 +31,10 @@ function kinnita(){
 			dataType : 'html',
 			success : function(data) {
 				if(data=="prob"){
-					alert("Tekkis probleem.\nSinu h‰‰l ei l‰inud arvesse");
+					alert("Tekkis probleem.\nSinu valik ei l‰inud arvesse");
 				}
 				else if(data=='ei'){
-					alert("Oled juba h‰‰letanud");
+					alert("Oled juba valinud");
 				}
 				else{
 					alert("Sina valisid enda esindajaks isiku:\nPoliitiku nimi: "+data);

@@ -54,6 +54,15 @@
         <url-pattern>/toVote</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>delVote</servlet-name>
+        <servlet-class>evalimised.delVote</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delVote</servlet-name>
+        <url-pattern>/delVote</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>Evalimised.html</welcome-file>
     </welcome-file-list>

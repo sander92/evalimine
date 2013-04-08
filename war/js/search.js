@@ -5,6 +5,7 @@ function otsimine() {
 		var regionCode = $("#regionselector").val();
 		var partyName = $("#partyselector option:selected").text();
 		var regionName = $("#regionselector option:selected").text();
+		$('*').css('cursor','wait');
 
 		$.ajax({
 			type : 'GET',
@@ -17,10 +18,12 @@ function otsimine() {
 				},
 			dataType : 'json',
 			success : function(data) {
-				var candidates = data
+				var candidates = data;
 				createTable(candidates, partyName, regionName);
+				$('*').css('cursor','default');
 			},
 			error : function(xhr, ajaxOptions, thrownError) {
+				$('*').css('cursor','default');
 				alert(thrownError);
 			}
 		});

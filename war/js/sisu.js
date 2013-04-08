@@ -68,7 +68,7 @@ function hidesees() {
 
 	else if (loggedin == true) {
 		$("#sees").show();
-		voterID=38210032311;
+		voterID=38210032314;
 	}
 }
 

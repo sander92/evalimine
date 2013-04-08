@@ -83,6 +83,7 @@ function createStatTable(data, option) {
         $("#tabel").trigger("clearCache");
         // let the plugin know that we made a update 
         $("table").trigger("update");
+       
     } else {
         $('#tabel').hide();
     }
