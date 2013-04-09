@@ -101,12 +101,30 @@ body.Vote a.Vote
 	border-radius:10px;
 }
 
+.fb-login-button
+{
+	margin-top:3px;
+}
+
 #left
 {
 	float:left;
 	width:360px;
 	margin-left:20px;
 	text-align:center;
+}
+
+#left-sisu
+{
+	position:relative;
+	clear:both;
+}
+
+#left-FB
+{
+	position:relative;
+	background-color:red;
+	clear:both;
 }
 
 #right

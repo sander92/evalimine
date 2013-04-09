@@ -34,8 +34,86 @@
 	
 </head>
 <body class= "Pealeht">
-		<p id="kaitse">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
-
+	
+	<!-- Fatseboki Login nupu koodid ja igast sodi -->
+	
+	<div id="fb-root"></div>
+	<script>
+	
+	//ainult see osa ongi kusjuures vajalik vist hetkel
+	(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=404187206346181";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}
+	(document, 'script', 'facebook-jssdk'));
+	
+	  
+	//testimiseks, ei toota hetkel vist
+	  function testAPI() {
+		    console.log('Welcome!  Fetching your information.... ');
+		    FB.api('/me', function(response) {
+		        console.log('Good to see you, ' + response.name + '.');
+		    });
+		}
+	  
+	//login funks
+	  function login() {
+		    FB.login(function(response) {
+		        if (response.authResponse) {
+		            // connected
+		            testAPI();
+		        } else {
+		            // cancelled
+		        }
+		    });
+		}
+	  
+	//initsialiseering, ma ei tea mille jaoks voi kas seda praegu vajagi on
+	  window.fbAsyncInit = function() {
+		  
+	    FB.init({
+	      appId      : '404187206346181', // App ID
+	      channelUrl : 'http://viking.netivalimised.appspot.com/channel.html', // Channel File
+	      status     : true, // check login status
+	      cookie     : true, // enable cookies to allow the server to access the session
+	      xfbml      : true  // parse XFBML
+	    });
+	    
+	    //logina staatus
+	    FB.getLoginStatus(function(response) {
+	    	  if (response.status === 'connected') {
+	    	    // connected
+	    	  } else if (response.status === 'not_authorized') {
+	    	    // not_authorized
+	    	    login();
+	    	  } else {
+	    	    // not_logged_in
+	    	    login();
+	    	  }
+	    	 });
+	
+	  };
+	
+	  // Load the SDK Asynchronously
+	  (function(d){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	</script>
+	
+	
+	<p id="kaitse">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>	
+	
+	<!-- fatseboki Login nupp -->
+	<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="3"></div>
+	
+	
 	<div id="container">
 		<div id="tiitel">
 			<h1><a href=Evalimised.html>E-VALIMISED</a></h1>
@@ -46,9 +124,11 @@
 		<div id="peasisu">
 		
 			<div id="sisu">
-				<div id="left">
+			
+				<div id="left" >
 					<p>Tere tulemast valima!</p>
 				</div>
+				
 				<div id="right">
 					
 					<p>On valimisteaasta ning Eesti rahvas vajab kedagi, kes nende eest
@@ -68,10 +148,8 @@
 		<p id="kaitse">Kokkulangevused reaalse e-valimiste protsessiga on juhuslikud</p>
 
 	</div>
-
+	
 
 </body>
 
-
->>>>>>> origin/br
 </html>
