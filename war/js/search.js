@@ -82,11 +82,11 @@ function createTable(candidates, givenParty, givenRegion) {
 		$('#tabel').show();
 		$("#tabel").trigger("clearCache");
 		// let the plugin know that we made a update 
-		$("#table").trigger("update");
+		$("#tabel").trigger("update");
 		// set sorting column and direction, this will sort on the first column 
-		//var sorting = [[0,0]]; 
+		var sorting = [[0,0]]; 
 		// sort on the first column 
-		//$("table").trigger("sorton",[sorting]);
+		$("tabel").trigger("sorton",[sorting]);
 	} else {
 		$('#tabel').hide();
 	}
