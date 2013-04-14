@@ -1,15 +1,15 @@
 package evalimised;
 
-public class Candidate {
+public class Person2 {
 
-    private int id;
+    private String id;
     private String firstName;
     private String lastName;
     private String party;
     private String area;
     
-    void setId(int i){
-    	id = i;
+    void setId(String s){
+    	id = s;
     }
     void setFName(String s){
     	firstName = s;
@@ -23,19 +23,4 @@ public class Candidate {
     void setArea(String s){
     	area = s;
     }
-}
-
-class Party {
-	private int id;
-	private String name;	
-}
-
-class Area {
-	private int id;
-	private String name;
-}
-
-class Person {
-	private int id;
-	private String name;
 }

@@ -64,11 +64,13 @@ function hidesees() {
 		// $("nupp").hide();
 		$("#sees").hide();
 		voterID=0;
+		votaAndmed("Vote","0");
 	}
 
 	else if (loggedin == true) {
 		$("#sees").show();
 		voterID=38210032314;
+		votaAndmed("Vote",voterID);
 	}
 }
 
