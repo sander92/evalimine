@@ -6,8 +6,8 @@
 }
 
 .pea {
-	position: absolute;
-	top: 150px;
+	position: relative;
+	top: 7px;
 	width: 580px;
 	text-align: center;
 	margin-right: 15px;
@@ -17,7 +17,7 @@
 .pea#tabel {
 	border:0px;
 	background-color:#99955C;
-	margin-top: 100px;
+	margin-top: 10px;
 	margin-left: 20px;
 	font-size: 11pt;
 	text-align: left;

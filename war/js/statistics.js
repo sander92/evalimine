@@ -1,5 +1,6 @@
 function getStat(option){
-        $.ajax({
+	if (navigator.onLine){//flipped
+		$.ajax({
             type : 'GET',
             url: '/statistics',
              data: { 
@@ -7,12 +8,107 @@ function getStat(option){
                 },
             dataType : 'json',
             success : function(data) {
+            	//console.log(JSON.stringify(data));
+        		$('*').css('cursor','default');
                 createStatTable(data, option);
+
             },
             error : function(xhr, ajaxOptions, thrownError) {
+        		$('*').css('cursor','default');
                 alert(thrownError);
+
             }
         });
+	}
+	else if (!navigator.onLine){
+    	if(option=="region"){	
+			query ="SELECT Area.AreaName, COUNT(Vote.Vote_Id) AS Votes FROM Vote " +
+					"JOIN Person ON Vote.PersonID = Person.Person_Id JOIN Area ON Person.AreaID=Area.Area_Id GROUP BY AreaID";
+			var res=[];
+			db.transaction(function(tx) {
+	            tx.executeSql(query, [], function(tx, rs) {
+	                for(var i=0; i<rs.rows.length; i++) {
+	                    var row = rs.rows.item(i);
+	                    
+	                    var rida={ };
+	                    rida['region']=row['AreaName'];
+	                    rida['votes']=row['Votes'];
+	                    res.push(rida);
+	                   /* res.push({
+	                    		FullName : row['FullName'],
+	                    		party : row['PartyName'],
+	                    		area : row['AreaName']
+	                    });*/
+	                }
+	                
+	    			createStatTable(res, option);//fix it
+
+	            });
+	        });
+		}
+		else if(option=="party"){
+			query ="SELECT Party.PartyName, COUNT(Vote.Vote_Id) AS Votes FROM Vote " +
+					"JOIN Person ON Vote.PersonID = Person.Person_Id JOIN Party ON Person.PartyID=Party.Party_Id GROUP BY PartyID";
+			
+			var res=[];
+			db.transaction(function(tx) {
+	            tx.executeSql(query, [], function(tx, rs) {
+	                for(var i=0; i<rs.rows.length; i++) {
+	                    var row = rs.rows.item(i);
+	                    
+	                    var rida={ };
+	                    rida['party']=row['PartyName'];
+	                    rida['votes']=row['Votes'];
+	                    res.push(rida);
+	                   /* res.push({
+	                    		FullName : row['FullName'],
+	                    		party : row['PartyName'],
+	                    		area : row['AreaName']
+	                    });*/
+	                }
+	                
+	    			createStatTable(res, option);//fix it
+
+	            });
+	        });
+			
+			
+		}
+		else if(option=="candidate"){
+			query = "SELECT Person.FullName, Area.AreaName, Party.PartyName, COUNT(Vote.Vote_Id) AS Votes FROM Vote " +
+					"JOIN Person ON Vote.PersonID = Person.Person_Id JOIN Party ON Person.PartyID=Party.Party_Id " +
+					"JOIN Area ON Person.AreaID=Area.Area_Id GROUP BY PersonID";
+			
+			var res=[];
+			db.transaction(function(tx) {
+	            tx.executeSql(query, [], function(tx, rs) {
+	                for(var i=0; i<rs.rows.length; i++) {
+	                    var row = rs.rows.item(i);
+	                    
+	                    var rida={ };
+	                    rida['name']=row['FullName'];
+	                    rida['party']=row['AreaName'];
+	                    rida['region']=row['PartyName'];
+	                    rida['votes']=row['Votes'];
+	                    res.push(rida);
+	                   /* res.push({
+	                    		FullName : row['FullName'],
+	                    		party : row['PartyName'],
+	                    		area : row['AreaName']
+	                    });*/
+	                }
+	                
+	    			createStatTable(res, option);//fix it
+
+	            });
+			});
+		}
+		
+			
+
+			//createTable(jsonobj, partyName, regionName);
+		$('*').css('cursor','default');
+	}
 }
 
 function createStatTable(data, option) {

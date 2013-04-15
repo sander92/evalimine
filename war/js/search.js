@@ -6,27 +6,82 @@ function otsimine() {
 		var partyName = $("#partyselector option:selected").text();
 		var regionName = $("#regionselector option:selected").text();
 		$('*').css('cursor','wait');
-
-		$.ajax({
-			type : 'GET',
-			url: '/search',
-			 data: { 
-    		 'fName': fName, 
-    		 'lName': '',
-    		 'party': partyCode,
-    		 'area': regionCode
+		
+		if (navigator.onLine){
+			$.ajax({
+				type : 'GET',
+				url: '/search',
+				 data: { 
+	    		 'fName': fName, 
+	    		 'lName': '',
+	    		 'party': partyCode,
+	    		 'area': regionCode
+					},
+				dataType : 'json',
+				success : function(data) {
+					var candidates = data;
+					console.log(JSON.stringify(candidates));
+					createTable(candidates, partyName, regionName);
+					$('*').css('cursor','default');
 				},
-			dataType : 'json',
-			success : function(data) {
-				var candidates = data;
-				createTable(candidates, partyName, regionName);
-				$('*').css('cursor','default');
-			},
-			error : function(xhr, ajaxOptions, thrownError) {
-				$('*').css('cursor','default');
-				alert(thrownError);
+				error : function(xhr, ajaxOptions, thrownError) {
+					$('*').css('cursor','default');
+					alert(thrownError);
+				}
+			});
+		}
+		else if (!navigator.onLine){
+			beginning = "SELECT Person.FullName";
+			middle = "";
+			end = "WHERE ";
+			if(!(fName=="") && fName != null)
+				end += "FullName LIKE '"+ fName + "%'' AND ";	
+			if(!(partyCode=="") && partyCode != null) {
+				beginning += ", Area.AreaName";
+				end += "PartyID=\""+partyCode+"\" AND ";
 			}
-		});
+			if(!(regionCode=="") && regionCode != null) {
+				beginning += ", Party.PartyName";
+				end += "AreaID=\""+regionCode+"\" AND ";
+			}
+			if(partyCode=="" && regionCode=="" && partyCode != null && regionCode != null){
+				beginning += ", Area.AreaName";
+				beginning += ", Party.PartyName";
+			}
+			middle += "JOIN Party ON Person.PartyID = Party.Party_Id ";
+			middle += "JOIN Area ON Person.AreaID = Area.Area_Id ";
+			//remove last " AND "
+			end = end.substring(0, end.length - 6);
+			beginning +=" FROM Person ";
+			query = beginning + middle + end;
+			console.log(query);
+			var res=[];
+			db.transaction(function(tx) {
+                tx.executeSql(query, [], function(tx, rs) {
+                    for(var i=0; i<rs.rows.length; i++) {
+                        var row = rs.rows.item(i);
+                        
+                        var rida={ };
+                        rida['FullName']=row['FullName'];
+                        rida['party']=row['PartyName'];
+                        rida['area']=row['AreaName'];
+                        res.push(rida);
+                       /* res.push({
+                        		FullName : row['FullName'],
+                        		party : row['PartyName'],
+                        		area : row['AreaName']
+                        });*/
+                    }
+                    
+        			createTable(res, partyName, regionName);//fix it
+
+                });
+            });
+			
+
+			//createTable(jsonobj, partyName, regionName);
+			$('*').css('cursor','default');
+		}
 
 	$('#showInfo').click(function() {
 		$.getJSON("json/candidate.json", function(data) {
@@ -37,13 +92,22 @@ function otsimine() {
 
 function createTable(candidates, givenParty, givenRegion) {
 	//clear previous table
+	//console.log("loome tabelit");
+
 	$('#tabel tbody tr').remove();
 
 	var name, region, party;
 
 	for (i in candidates) {
 		//get values from json data
-		name = candidates[i]['firstName'] + ' ' + candidates[i]['lastName'];
+		if (navigator.onLine){
+			name = candidates[i]['firstName'] + ' ' + candidates[i]['lastName'];
+		}
+		else if (!navigator.onLine){
+			name = candidates[i]['FullName'];
+		}
+		x=0;//suvaline asi, not sure kas ifidejada muidu töötab
+		
 		if (givenParty == '')
 			party = candidates[i]['party'];
 		else
