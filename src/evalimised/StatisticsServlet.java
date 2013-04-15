@@ -1,4 +1,7 @@
 package evalimised;
+
+import channel.StatisticsUpdater;
+
 import com.google.appengine.api.rdbms.AppEngineDriver;
 import java.io.IOException;
 import java.sql.*;
@@ -12,10 +15,9 @@ import com.google.gson.GsonBuilder;
 
 public class StatisticsServlet extends HttpServlet{
 
-		
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		
       String option = req.getParameter("option");
+
 	  Connection c = null;
 	    try {
 	      DriverManager.registerDriver(new AppEngineDriver());
@@ -44,7 +46,7 @@ public class StatisticsServlet extends HttpServlet{
 	    } 
 	  }
 	
-	private static String createQuery(String option) {
+	public static String createQuery(String option) {
 		String query = "";
 		if(option.equals("region")){	
 			query ="SELECT Area.AreaName, COUNT(Vote.Vote_Id) AS Votes FROM Vote " +
@@ -63,7 +65,7 @@ public class StatisticsServlet extends HttpServlet{
 		return query;
 	}
 	
-	private static String createJSON(ResultSet rs, String option){
+	public static String createJSON(ResultSet rs, String option){
 	      List<VoteData> data = new ArrayList<VoteData>();
 	      try {
 			while(rs.next()){

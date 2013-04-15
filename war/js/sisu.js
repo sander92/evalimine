@@ -1,4 +1,5 @@
 var loggedin = false;
+var connected = false;
 var voterID;
 function sisu(nimi) {
 
@@ -6,8 +7,11 @@ function sisu(nimi) {
 
 	if (nimi != "Kandidaadid") {
 		$("#peasisu").load(nimi + ".html #sisu", function() {
-			if(nimi=="Statistika")
+			if(nimi=="Statistika"){
 				tableSorter();
+				if(!connected)
+					initialize();
+			}
 			hidesees();
 		});
 	} else {

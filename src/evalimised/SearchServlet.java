@@ -1,5 +1,7 @@
 package evalimised;
+
 import com.google.appengine.api.rdbms.AppEngineDriver;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,7 +13,6 @@ import com.google.gson.GsonBuilder;
 
 
 public class SearchServlet extends HttpServlet{
-
 		
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
       String fName = req.getParameter("fName");
@@ -34,11 +35,10 @@ public class SearchServlet extends HttpServlet{
 	    	  statement = createQuery(fName,lName,party, area);
     	  PreparedStatement stmt = c.prepareStatement(statement);
 	      ResultSet rs = stmt.executeQuery();
-	      String jsonData = createJSON(rs, party,area);
+	      String jsonData = createJSON(rs, party,area);          
           resp.setContentType("application/json");
           resp.setCharacterEncoding("UTF-8");
           resp.getWriter().write(jsonData);
-
 	    } 
 	    catch (SQLException e) {
 	        e.printStackTrace();

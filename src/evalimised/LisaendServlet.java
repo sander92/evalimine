@@ -1,10 +1,12 @@
 package evalimised;
+import channel.StatisticsUpdater;
+
 import com.google.appengine.api.rdbms.AppEngineDriver;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import javax.servlet.http.*;
-
+import com.google.appengine.api.channel.ChannelService;
 
 public class LisaendServlet extends HttpServlet{
 
@@ -39,6 +41,9 @@ public class LisaendServlet extends HttpServlet{
 
 	      int i=stmt.executeUpdate();
 
+	      
+	      StatisticsUpdater su = new StatisticsUpdater();
+	      su.updateClients();
 	      
 
 		out.print("	Olete andmebaasi lisatud<br>Tere uus poliitik!");

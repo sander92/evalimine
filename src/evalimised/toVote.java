@@ -1,4 +1,6 @@
 package evalimised;
+import channel.StatisticsUpdater;
+
 import com.google.appengine.api.rdbms.AppEngineDriver;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -43,6 +45,8 @@ public class toVote extends HttpServlet{
 			String a=rs.getString("haal");
 			if(a.trim().equals("1") || a.trim().equals("1")){
 				out.print(candName);
+			      StatisticsUpdater su = new StatisticsUpdater();
+			      su.updateClients();
 			}
 			else{
 				out.print("ei");

@@ -1,4 +1,6 @@
 package evalimised;
+import channel.StatisticsUpdater;
+
 import com.google.appengine.api.rdbms.AppEngineDriver;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -28,6 +30,8 @@ public class delVote extends HttpServlet{
     	  PreparedStatement stmt = c.prepareStatement(statement);
 	      int r = stmt.executeUpdate();
 	      
+	      StatisticsUpdater su = new StatisticsUpdater();
+	      su.updateClients();
 	    } 
 	    catch (SQLException e) {
 	        e.printStackTrace();
