@@ -12,8 +12,25 @@ function sisu(nimi) {
 				if(!connected)
 					initialize();
 			}
+			if (nimi == "Vote"){
+				FB.getLoginStatus(function(response) {
+					if (response.status === 'connected') {
+						document.getElementById("kasutajainfo").innerHTML="Olete sisse logitud.<br>Kasutaja ID on: " + window.kasutajaID;
+						$("#sees").show();
+						voterID=window.kasutajaID;
+						votaAndmed("Vote",voterID);
+					}
+					else{
+						document.getElementById("kasutajainfo").innerHTML="Palun logige sisse.";
+						$("#sees").hide();
+						voterID=0;
+						votaAndmed("Vote","0");
+					}
+				})
+			}
 			hidesees();
 		});
+		
 	} else {
 		$("#peasisu").load(nimi + ".html #sisu", function() {
 			tableSorter();
@@ -33,7 +50,8 @@ function sisu(nimi) {
 	// document.getElementById('sisu').outerHTML=document.getElementById('sisu').innerHTML;
 	// }
 	// $("body").load(nimi+".html");
-
+	
+	
 }
 
 function navig() {
@@ -58,24 +76,23 @@ function loginout() {
 	if (loggedin == true) {
 		hidesees();
 		document.getElementById("Login").innerHTML = "V&#228;lju";
-
 	}
 }
 
 function hidesees() {
-	if (loggedin == false) {
-		// $("sees").hide();
-		// $("nupp").hide();
-		$("#sees").hide();
-		voterID=0;
-		votaAndmed("Vote","0");
-	}
+	FB.getLoginStatus(function(response) {
+		if (response.status === 'connected') {
+			$("#sees").hide();
+			voterID=0;
+			votaAndmed("Vote","0");
+		}
 
-	else if (loggedin == true) {
-		$("#sees").show();
-		voterID=38210032314;
-		votaAndmed("Vote",voterID);
-	}
+		else{
+			$("#sees").show();
+			voterID=window.kasutjaID;
+			votaAndmed("Vote",voterID);
+		}
+	})
 }
 
 function isik(nimi) {
@@ -84,7 +101,6 @@ function isik(nimi) {
 	$("#right")[0].innerHTML = "<p>" + uus + "</p>"
 
 }
-
 
 window.onload = navig;
 window.onhashchange = navig;

@@ -1,6 +1,8 @@
 CACHE MANIFEST
 #rev15 nsmmc12mmkckmmnmmnkmm
 
+FALLBACK:
+/ /offline.html
 /war/autocss.css
 /war/channel.html
 /war/edgar.jpg
@@ -57,6 +59,4 @@ CACHE MANIFEST
 /war/js/statistics.js
 /war/js/validate.js
 /war/js/voteData.js
-
-FALLBACK:
-/ /offline.html
+/war/js/facebook.js

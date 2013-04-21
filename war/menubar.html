@@ -7,17 +7,21 @@
 	<script type="text/javascript" src="/js/jquery-latest.js"></script>
 	
 	<script type="text/javascript" src="/js/menu.js"></script>
+	<script type="text/javascript" src="/js/facebook.js"></script>
 
 </head>
 <body>
 
+
 	<div id="navibar">
+		<div id="fb-root"></div>
 		<ul id="navigation">
 			<li><a class="Pealeht" href="#Evalimised" onClick=sisu("Evalimised")>Pealeht</a></li>
 			<li><a class="Vote" href="#Vote" onClick=sisu("Vote")>Minu andmed</a></li>
 			<li><a class="Kandidaadid" href="#Kandidaadid" onClick=sisu("Kandidaadid")>Kandidaadid</a></li>
 			<li><a class="Statistika" href="#Statistika" onClick=sisu("Statistika")>Statistika</a></li>
-			<li><a class="Logi" id="Login" href="#Evalimised" onClick=loginout()>Sisene</a></li>
+			<li><a  id="loginupp" href="#Vote" onclick=sisu("Vote")>Sisene</a></li>
+			<!-- href="javascript:void(0)"-->
 		</ul>
 	</div>
 </body>
