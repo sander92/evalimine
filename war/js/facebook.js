@@ -13,7 +13,7 @@ window.fbAsyncInit = function() {
 	  
     FB.init({
       appId      : '404187206346181', // App ID
-      channelUrl : 'http://viking.netivalimised.appspot.com/channel.html', // Channel File
+      channelUrl : 'http://netivalimised.appspot.com/channel.html', // Channel File
       status     : true, // check login status
       cookie     : true, // enable cookies to allow the server to access the session
       xfbml      : true  // parse XFBML
@@ -29,6 +29,11 @@ window.fbAsyncInit = function() {
 	        //document.getElementById('fb-logout').style.display = 'block';
 	        document.getElementById("loginupp").onclick =function(){logout()};
 	        document.getElementById("loginupp").innerHTML="V&#228;lju";
+	        a = location.hash;
+	    	a = a.replace("#", "");
+	    	if (a == "Vote" ||a == "Kandidaadid") {
+				$("#sees").show();
+	    	}
 //	        document.getElementById("kasutajainfo").innerHTML="Olete sisse logitud.";
 //	        document.getElementById("kasutajainfo").appendChild(document.createElement("br"));
 //	        document.getElementById("kasutajainfo").innerHTML="Kasutaja ID on: " + response.authResponse.userID;;
@@ -37,12 +42,22 @@ window.fbAsyncInit = function() {
 	        //login();
 	        document.getElementById("loginupp").onclick = function(){login()};
 //	        document.getElementById("loginupp").innerHTML="Sisene"
+	        a = location.hash;
+	    	a = a.replace("#", "");
+	    	if (a == "Vote" ||a == "Kandidaadid") {
+				$("#sees").hide();
+	    	}
 	    } else {
 	        // User not logged into FB
 	        //login();
 	        //document.getElementById('fb-logout').style.display = 'block';
 	        document.getElementById("loginupp").onclick = function(){login()};
 //	        document.getElementById("loginupp").innerHTML="Sisene";
+	        a = location.hash;
+	    	a = a.replace("#", "");
+	    	if (a == "Vote" ||a == "Kandidaadid") {
+				$("#sees").hide();
+	    	}
 	    }
 	});
 }
@@ -65,7 +80,11 @@ function login() {
 	            document.getElementById('loginupp').innerHTML = 'V&#228;lju';
 	            document.getElementById("loginupp").onclick = function(){logout()};
 		        document.getElementById("kasutajainfo").innerHTML="Olete sisse logitud.<br>Kasutaja ID on: " + window.kasutajaID;
-		        
+		        a = location.hash;
+		    	a = a.replace("#", "");
+		    	if (a == "Vote" ||a == "Kandidaadid") {
+					$("#sees").show();
+		    	}
 	        } else {
 	            // cancelled
 	        }
@@ -80,6 +99,11 @@ function logout() {
 	        document.getElementById('loginupp').innerHTML = 'Sisene';
 	        document.getElementById("loginupp").onclick = function(){login()};
 	        document.getElementById("kasutajainfo").innerHTML="Palun logige sisse.";
+	        a = location.hash;
+	    	a = a.replace("#", "");
+	    	if (a == "Vote" ||a == "Kandidaadid") {
+				$("#sees").hide();
+	    	}
 	    });
 	}
 

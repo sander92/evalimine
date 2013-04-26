@@ -22,7 +22,7 @@ function kinnita(){
 			//url : 'json/findCandidatesByPartyAndRegion.json',
 			url: '/toVote',
 			 data: { 
-    		 "voterID": voterID,
+    		 "voterID": window.kasutajaID,
     		 "candidateName" : kand_nimi,
     		 "candidateParty" : kand_party,
     		 "candidateArea" : kand_ala    		 

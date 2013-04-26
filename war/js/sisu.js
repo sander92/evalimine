@@ -12,13 +12,16 @@ function sisu(nimi) {
 				if(!connected)
 					initialize();
 			}
-			if (nimi == "Vote"){
+			if (nimi == "Vote"||nimi=="Kandidaadid"){
 				FB.getLoginStatus(function(response) {
 					if (response.status === 'connected') {
-						document.getElementById("kasutajainfo").innerHTML="Olete sisse logitud.<br>Kasutaja ID on: " + window.kasutajaID;
-						$("#sees").show();
+						if (nimi == "Vote"){
+
+							document.getElementById("kasutajainfo").innerHTML="Olqete sisse logitud.<br>Kasutaja ID on: " + window.kasutajaID;
+						}
 						voterID=window.kasutajaID;
 						votaAndmed("Vote",voterID);
+						$("#sees").show();
 					}
 					else{
 						document.getElementById("kasutajainfo").innerHTML="Palun logige sisse.";
@@ -26,9 +29,11 @@ function sisu(nimi) {
 						voterID=0;
 						votaAndmed("Vote","0");
 					}
-				})
+				});
+//				hidesees();
+
 			}
-			hidesees();
+//			hidesees();
 		});
 		
 	} else {
@@ -66,31 +71,30 @@ function navig() {
 
 }
 
-function loginout() {
-	loggedin = !loggedin;
-	if (loggedin == false) {
-		hidesees();
-		document.getElementById("Login").innerHTML = "Sisene";
-	}
-
-	if (loggedin == true) {
-		hidesees();
-		document.getElementById("Login").innerHTML = "V&#228;lju";
-	}
-}
-
+//function loginout() {
+//	loggedin = !loggedin;
+//	if (loggedin == false) {
+////		hidesees();
+//		document.getElementById("Login").innerHTML = "Sisene";
+//	}
+//
+//	if (loggedin == true) {
+////		hidesees();
+//		document.getElementById("Login").innerHTML = "V&#228;lju";
+//	}
+//}
+//
 function hidesees() {
 	FB.getLoginStatus(function(response) {
 		if (response.status === 'connected') {
-			$("#sees").hide();
-			voterID=0;
-			votaAndmed("Vote","0");
+			$("#sees").show();
+			votaAndmed("Vote",kasutajaID);
+			
 		}
 
 		else{
-			$("#sees").show();
-			voterID=window.kasutjaID;
-			votaAndmed("Vote",voterID);
+			$("#sees").hide();
+			votaAndmed("Vote","0");
 		}
 	})
 }
