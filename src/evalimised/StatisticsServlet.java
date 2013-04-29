@@ -17,7 +17,6 @@ public class StatisticsServlet extends HttpServlet{
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
       String option = req.getParameter("option");
-
 	  Connection c = null;
 	    try {
 	      DriverManager.registerDriver(new AppEngineDriver());
@@ -48,6 +47,7 @@ public class StatisticsServlet extends HttpServlet{
 	
 	public static String createQuery(String option) {
 		String query = "";
+		
 		if(option.equals("region")){	
 			query = "SELECT Area.AreaName, COUNT(Vote.Vote_Id) AS Votes FROM Area LEFT JOIN Person ON Person.AreaID=Area.Area_Id " +
 					"LEFT JOIN Vote ON Person.Person_Id = Vote.PersonID  GROUP BY Area_Id ORDER BY Votes DESC";
@@ -62,14 +62,14 @@ public class StatisticsServlet extends HttpServlet{
 					"LEFT JOIN Area ON Person.AreaID=Area.Area_Id GROUP BY Person_Id ORDER BY Votes DESC";	
 		}
 		else if(option.equals("regionbyparty")){
-			query = "SELECT Party.PartyName, Area.AreaName, COUNT(Vote.Vote_Id) AS Votes FROM Area " +
+			query = "SELECT Party.PartyName, Area.Area_Id, COUNT(Vote.Vote_Id) AS Votes FROM Area " +
 					"LEFT JOIN Person ON Person.AreaID=Area.Area_Id LEFT JOIN Party ON Person.PartyID=Party.Party_Id " +
-					"LEFT JOIN Vote ON Person.Person_Id = Vote.PersonID  GROUP BY 1,2 ORDER BY AreaName DESC";
+					"LEFT JOIN Vote ON Person.Person_Id = Vote.PersonID  GROUP BY 1,2 ORDER BY Area_Id, Votes DESC";
 		}
 		else if(option.equals("partybyregion")){
 			query ="SELECT Party.PartyName, Area.AreaName, COUNT(Vote.Vote_Id) AS Votes FROM Party " +
 					"LEFT JOIN Person ON Person.PartyID=Party.Party_Id LEFT JOIN Area ON Person.AreaID=Area.Area_Id " +
-					"LEFT JOIN Vote ON Person.Person_Id = Vote.PersonID  GROUP BY 1,2 ORDER BY PartyName DESC";
+					"LEFT JOIN Vote ON Person.Person_Id = Vote.PersonID  GROUP BY 1,2 ORDER BY PartyName DESC, Votes DESC";
 		}
 		System.out.println(query);
 		return query;
@@ -90,6 +90,10 @@ public class StatisticsServlet extends HttpServlet{
 			    	  element.setName(rs.getString("FirstName") + " " + rs.getString("LastName"));
 			    	  element.setParty(rs.getString("PartyName"));
 			    	  element.setRegion(rs.getString("AreaName"));
+			      }
+			      else if( option.equals("regionbyparty") || option.equals("partybyregion")){
+			    	  element.setRegion(rs.getString("Area_Id"));
+			    	  element.setParty(rs.getString("PartyName"));
 			      }
 			      element.setVotes(rs.getInt("Votes"));
 			      data.add(element);

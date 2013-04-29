@@ -8,6 +8,7 @@ function sisu(nimi) {
 	if (nimi != "Kandidaadid") {
 		$("#peasisu").load(nimi + ".html #sisu", function() {
 			if(nimi=="Statistika"){
+				getStat('regionbyparty');
 				tableSorter();
 				if(!connected)
 					initialize();
