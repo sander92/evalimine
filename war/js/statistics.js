@@ -31,10 +31,10 @@ function getStat(option){
 	                for(var i=0; i<rs.rows.length; i++) {
 	                    var row = rs.rows.item(i);
 	                    
-	                    var rida={ };
-	                    rida['region']=row['AreaName'];
-	                    rida['votes']=row['Votes'];
-	                    res.push(rida);
+	                    var rcountya={ };
+	                    rcountya['region']=row['AreaName'];
+	                    rcountya['votes']=row['Votes'];
+	                    res.push(rcountya);
 	                   /* res.push({
 	                    		FullName : row['FullName'],
 	                    		party : row['PartyName'],
@@ -57,10 +57,10 @@ function getStat(option){
 	                for(var i=0; i<rs.rows.length; i++) {
 	                    var row = rs.rows.item(i);
 	                    
-	                    var rida={ };
-	                    rida['party']=row['PartyName'];
-	                    rida['votes']=row['Votes'];
-	                    res.push(rida);
+	                    var rcountya={ };
+	                    rcountya['party']=row['PartyName'];
+	                    rcountya['votes']=row['Votes'];
+	                    res.push(rcountya);
 	                   /* res.push({
 	                    		FullName : row['FullName'],
 	                    		party : row['PartyName'],
@@ -75,7 +75,7 @@ function getStat(option){
 			
 			
 		}
-		else if(option=="candidate"){
+		else if(option=="candcountyate"){
 			query = "SELECT Person.FullName, Area.AreaName, Party.PartyName, COUNT(Vote.Vote_Id) AS Votes FROM Vote " +
 					"JOIN Person ON Vote.PersonID = Person.Person_Id JOIN Party ON Person.PartyID=Party.Party_Id " +
 					"JOIN Area ON Person.AreaID=Area.Area_Id GROUP BY PersonID";
@@ -86,12 +86,12 @@ function getStat(option){
 	                for(var i=0; i<rs.rows.length; i++) {
 	                    var row = rs.rows.item(i);
 	                    
-	                    var rida={ };
-	                    rida['name']=row['FullName'];
-	                    rida['party']=row['AreaName'];
-	                    rida['region']=row['PartyName'];
-	                    rida['votes']=row['Votes'];
-	                    res.push(rida);
+	                    var rcountya={ };
+	                    rcountya['name']=row['FullName'];
+	                    rcountya['party']=row['AreaName'];
+	                    rcountya['region']=row['PartyName'];
+	                    rcountya['votes']=row['Votes'];
+	                    res.push(rcountya);
 	                   /* res.push({
 	                    		FullName : row['FullName'],
 	                    		party : row['PartyName'],
@@ -125,7 +125,7 @@ function createStatTable(data, option) {
         cols.push($("<td></td>").text("Erakond"));
     else if(option == "region")
         cols.push($("<td></td>").text("Piirkond"));
-    else if(option == "candidate"){
+    else if(option == "candcountyate"){
         cols.push($("<td></td>").text("Nimi"));
         cols.push($("<td></td>").text("Erakond"));
         cols.push($("<td></td>").text("Piirkond"));
@@ -156,7 +156,7 @@ function createStatTable(data, option) {
             region = data[i]['region'];
             cols[0] = $("<td></td>").text(region);
         }
-        else if(option == "candidate"){
+        else if(option == "candcountyate"){
             name = data[i]['name'];
             party = data[i]['party'];
             region = data[i]['region'];
@@ -181,7 +181,7 @@ function createStatTable(data, option) {
         // let the plugin know that we made a update 
         $("tabel").trigger("update");      
     } else {
-        $('#tabel').hide();
+        $('#tabel').hcountye();
     }
 }
 
@@ -210,7 +210,7 @@ var regionData = {
 			//darkorange, saddlebrown
 }
 
-function createMapOverlay(data){	
+function createMapOverlay(data){
 	var mapProp = {
 			center:new google.maps.LatLng(58.8086, 25.4325),
 			zoom:7,
@@ -218,7 +218,7 @@ function createMapOverlay(data){
 		};
 	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 	
-	var defaultColor = 'lightgray';
+	var defaultColor = 'gray';
 	var markerIcon = {
 	    	  path: google.maps.SymbolPath.CIRCLE,
 	    	  fillOpacity: 0.5,
@@ -230,19 +230,26 @@ function createMapOverlay(data){
 	};
 	var markers = new Array();
 	
-	var prevId;
+	var prevCounty;
+	var prevLeadingIndex = -1;
+	var prevLeadingParty;
+	var prevLeadingVotes;
 	var color;
 	var totalVotes = 0;
 	for(var i = 0;i<data.length;i++){
 		follColor = defaultColor;
 		strokeColor = defaultColor;
-		var id = data[i]['region'];
+		var county = data[i]['region'];
+		var votes = data[i]['votes'];
 		//party with most votes
-		if(id != prevId){
+		if(county != prevCounty){
+			//marker info for previous county
+			if(prevLeadingIndex >= 0)
+				setMarkerInfo(markers[prevLeadingIndex], prevLeadingParty, prevLeadingVotes, totalVotes);
 			var party = data[i]['party'];
-			var votes = data[i]['votes'];
+			totalVotes += votes;
 			markers[i] = new google.maps.Marker({
-			      position: new google.maps.LatLng(regionData['regions'][id]['x'],regionData['regions'][id]['y']),
+			      position: new google.maps.LatLng(regionData['regions'][county]['x'],regionData['regions'][county]['y']),
 			      icon: {
 			    	  path: google.maps.SymbolPath.CIRCLE,
 			    	  fillOpacity: 0.5,
@@ -259,22 +266,26 @@ function createMapOverlay(data){
 				color = regionData['parties'][party];
 				markers[i].getIcon().fillColor = color;
 				markers[i].getIcon().strokeColor = color;
-				markers[i].infoString = '' + party + ' ' + votes + ' h‰‰lt';
 				google.maps.event.addListener(markers[i], 'click', function() {
 					var infowindow = new google.maps.InfoWindow();
 					infowindow.setContent(this.infoString);
 					infowindow.open(map,this);
 				});
 			}
-			prevId = id;
+			prevCounty = county;
+			prevLeadingParty = party;
+			prevLeadingVotes = votes;
+			prevLeadingIndex = i;
+			totalVotes = votes;
 		}
 		//other parties in the region
 		else
-			totalVotes += data[i]['votes'];
+			totalVotes += votes;
 	}	
 }
 
 
-function setMarkerInfo(marker, votes, totalVotes){
-	
+function setMarkerInfo(marker, party, votes, totalVotes){
+	var prc = Number((votes/totalVotes*100).toFixed(2));	
+	marker.infoString = '' + party + ' ' + votes + ' h‰‰lt (' + prc + '% kogu h‰‰ltest)';
 }
